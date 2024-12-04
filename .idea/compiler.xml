@@ -2,7 +2,9 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
+      <module name="effectivem.data-tickets" target="21" />
       <module name="effectivem.provider" target="21" />
+      <module name="effectivem.tickets-provider" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

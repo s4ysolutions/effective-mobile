@@ -22,4 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "effectivem"
 include(":app")
 include(":domain")
-include(":tickets-provider")
+include(":data:tickets")
