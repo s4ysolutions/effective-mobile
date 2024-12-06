@@ -21,5 +21,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "effectivem"
 include(":app")
-include(":domain")
 include(":data:tickets")
+include(":domain")
+include(":feature:flight-tickets")
+include(":feature:hotels")
+include(":navigation")
+include(":views")

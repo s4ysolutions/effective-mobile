@@ -1,7 +1,9 @@
 plugins {
+    id("kotlin-kapt")
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serializatin)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -40,16 +42,23 @@ android {
     }
 }
 
-dependencies {
+kapt {
+    correctErrorTypes = true
+}
 
-    implementation(libs.androidx.core.ktx)
+dependencies {
+    kapt(libs.hilt.compiler)
+    // implementation(project(":navigation"))
+    implementation(project(":feature:flight-tickets"))
+    implementation(project(":feature:hotels"))
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.hilt.android)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

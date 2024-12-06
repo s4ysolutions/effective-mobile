@@ -1,4 +1,5 @@
 plugins {
+    id("kotlin-kapt")
     id("java-library")
     alias(libs.plugins.kotlin.jvm)
 }
@@ -15,5 +16,10 @@ kotlin {
 }
 
 dependencies {
+    //kapt(libs.hilt.compiler) must be dagger
     implementation(libs.rxjava)
+    // implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.rx3)
+    //implementation(libs.hilt)
+    testImplementation(libs.junit)
 }

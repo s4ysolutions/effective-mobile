@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Effectivem.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Theme.Effectivem.BottomSheet.Modal</item>
+    </style>
+
+    <!--ignores background style name="Theme.Effectivem.BottomSheet.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal"-->
+    <style name="Theme.Effectivem.BottomSheet.Modal" parent="Widget.Design.BottomSheet.Modal">
+        <item name="backgroundTint">@color/grey_2</item>
+        <item name="android:background">@drawable/rounded_dialog</item>
+    </style>
+    <style name="Theme.Effectivem.CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/grey_3</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="contentPadding">?attr/viewPadding</item>
+    </style>
+    <style name="Theme.Effectivem.CardViewNestedStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/grey_4</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="contentPadding">?attr/viewPadding</item>
+    </style>
+    <style name="Theme.Effectivem.ImageButtonStyle" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@color/red</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/grey_65</item>
+    </style>
+
+</resources>

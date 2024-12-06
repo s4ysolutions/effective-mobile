@@ -14,6 +14,11 @@
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/data/tickets" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/flight-tickets" />
+            <option value="$PROJECT_DIR$/feature/hotels" />
+            <option value="$PROJECT_DIR$/navigation" />
+            <option value="$PROJECT_DIR$/views" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
