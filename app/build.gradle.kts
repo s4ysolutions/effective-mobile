@@ -47,10 +47,12 @@ kapt {
 }
 
 dependencies {
+    implementation(libs.androidx.activity)
     kapt(libs.hilt.compiler)
     // implementation(project(":navigation"))
     implementation(project(":feature:flight-tickets"))
     implementation(project(":feature:hotels"))
+    implementation(project(":feature:profile"))
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)

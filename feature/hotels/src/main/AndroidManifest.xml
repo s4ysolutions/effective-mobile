@@ -5,7 +5,8 @@
         <activity
             android:name=".HotelsActivity"
             android:exported="true"
-            android:label="@string/title_activity_hotels" />
+            android:label="@string/title_activity_hotels">
+        </activity>
     </application>
 
 </manifest>

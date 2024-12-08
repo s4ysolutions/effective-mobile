@@ -7,6 +7,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
+import solutions.s4y.effectm.domain.models.ImageValue
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -35,6 +36,8 @@ class RetrofitProviderTest {
         assertEquals("RUB", offers[0].price.c)
         assertEquals("Die Antwoord", offers[0].title)
         assertEquals("Будапешт", offers[0].town)
+        assertEquals(ImageValue.ImageValueById::class.java, offers[0].image.javaClass)
+        assertEquals(1, (offers[0].image as ImageValue.ImageValueById).id)
         assert(offers[1].id is RemoteEntityId)
         assertEquals(2, (offers[1].id as RemoteEntityId).value)
         assertEquals(1999, offers[1].price.i)
@@ -42,6 +45,8 @@ class RetrofitProviderTest {
         assertEquals("RUB", offers[1].price.c)
         assertEquals("Socrat&Lera", offers[1].title)
         assertEquals("Санкт-Петербург", offers[1].town)
+        assertEquals(ImageValue.ImageValueById::class.java, offers[1].image.javaClass)
+        assertEquals(2, (offers[1].image as ImageValue.ImageValueById).id)
         assert(offers[2].id is RemoteEntityId)
         assertEquals(3, (offers[2].id as RemoteEntityId).value)
         assertEquals(2390, offers[2].price.i)
@@ -50,6 +55,8 @@ class RetrofitProviderTest {
         assertEquals("Лампабикт", offers[2].title)
         assertEquals("Москва", offers[2].town)
         assertEquals(3, offers.size)
+        assertEquals(ImageValue.ImageValueById::class.java, offers[2].image.javaClass)
+        assertEquals(3, (offers[2].image as ImageValue.ImageValueById).id)
     }
 
     @Test

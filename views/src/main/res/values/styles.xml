@@ -7,7 +7,7 @@
     <!--ignores background style name="Theme.Effectivem.BottomSheet.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal"-->
     <style name="Theme.Effectivem.BottomSheet.Modal" parent="Widget.Design.BottomSheet.Modal">
         <item name="backgroundTint">@color/grey_2</item>
-        <item name="android:background">@drawable/rounded_dialog</item>
+        <item name="android:background">@drawable/shape_rounded_dialog</item>
     </style>
     <style name="Theme.Effectivem.CardViewStyle" parent="Widget.MaterialComponents.CardView">
         <item name="cardBackgroundColor">@color/grey_3</item>
@@ -26,7 +26,35 @@
     <style name="Theme.Effectivem.TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
         <item name="android:textSize">22sp</item>
-        <item name="android:textColor">@color/grey_65</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.Test" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <!-- like MaterialTimePicker -->
+    <style name="Theme.Effectivem.TextInputStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/Theme.Effectivem.MaterialThemeOverlay</item>
+    </style>
+    <style name="Theme.Effectivem.MaterialThemeOverlay" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="editTextStyle">@style/Theme.Effectivem.TextInputEditText.OutlinedBox</item>
+        <item name="android:textColorHint">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="Theme.Effectivem.TextInputEditText.OutlinedBox" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
 
 </resources>

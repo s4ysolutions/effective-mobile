@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/flight-tickets" />
             <option value="$PROJECT_DIR$/feature/hotels" />
+            <option value="$PROJECT_DIR$/feature/profile" />
             <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/views" />
           </set>

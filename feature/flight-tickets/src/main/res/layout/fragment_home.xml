@@ -1,36 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/view_padding"
     android:orientation="vertical"
-    tools:context=".home.HomeFragment"
+    android:padding="@dimen/view_padding"
     tools:background="@color/grey_2"
-    tools:theme="@style/Theme.Effectivem"
-    >
+    tools:context=".screens.home.HomeFragment"
+    tools:theme="@style/Theme.Effectivem">
+
     <TextView
-        android:textAppearance="?attr/textAppearanceTitleLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="@string/flights_search"/>
+        android:text="@string/flights_search"
+        android:textAppearance="?attr/textAppearanceTitleLarge" />
 
-    <include layout="@layout/fragment_search_card"/>
+    <include layout="@layout/card_search" android:id="@+id/card_search" />
 
     <TextView
-        android:textAppearance="?attr/textAppearanceTitleLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="@string/fly_away_in_musical_way"/>
+        android:text="@string/fly_away_in_musical_way"
+        android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/offers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:itemCount="3"
+        tools:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/item_offer" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/offers_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:itemCount="3"
+        tools:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/item_offer" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/suggestions"
+        android:id="@+id/offers_pager2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:itemCount="3"
+        tools:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/item_offer" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center" />
 
     <!--ImageButton
         android:id="@+id/button_search"

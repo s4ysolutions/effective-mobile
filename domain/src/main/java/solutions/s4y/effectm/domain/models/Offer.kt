@@ -5,5 +5,5 @@ data class Offer(
     val title: String,
     val town: String,
     val price: Money,
-    val image: ImageProvider
+    val image: ImageValue
 )

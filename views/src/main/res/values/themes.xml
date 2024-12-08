@@ -1,19 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Effectivem" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+    <!--style name="Theme.Effectivem" parent="Theme.MaterialComponents.DayNight.NoActionBar"-->
+    <style name="Theme.Effectivem" parent="Theme.MaterialComponents">
+        <!-- text input color -->
         <item name="colorPrimaryVariant">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-        <item name="android:windowBackground">?attr/colorPrimaryVariant</item>
+        <!-- text input color -->
+        <item name="colorOnSurface">@color/white</item>
+        <!-- text hint color -->
+        <item name="colorOnSurfaceVariant">@color/grey_6</item>
+
+        <!--item name="android:windowBackground">?attr/colorPrimaryVariant</item-->
         <item name="viewPadding">@dimen/view_padding</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
 
         <item name="bottomSheetDialogTheme">@style/Theme.Effectivem.BottomSheetDialog</item>
         <item name="cornerRadius">@dimen/view_padding</item>
@@ -21,5 +21,18 @@
         <item name="cardViewNestedStyle">@style/Theme.Effectivem.CardViewNestedStyle</item>
         <item name="cardViewStyle">@style/Theme.Effectivem.CardViewStyle</item>
         <item name="textAppearanceTitleLarge">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
+        <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
+        <item name="textAppearanceBody1">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceBody2">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <!-- text edit -->
+        <item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceBodySmall">@style/Theme.Effectivem.TextAppearance.BodySmall</item>
+        <item name="textAppearanceDisplayLarge">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceDisplayMedium">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceDisplaySmall">@style/Theme.Effectivem.TextAppearance.Test</item>
+
+        <item name="textInputStyle">@style/Theme.Effectivem.TextInputStyle</item>
     </style>
 </resources>
