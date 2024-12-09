@@ -56,6 +56,7 @@
                         android:layout_weight="1">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dest_city"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
@@ -95,9 +96,10 @@
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/dest_country"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Куда Турция hint" />
+                        android:hint="@string/dest_country_hint" />
                 </com.google.android.material.textfield.TextInputLayout>
                     <FrameLayout
                         android:layout_width="wrap_content"

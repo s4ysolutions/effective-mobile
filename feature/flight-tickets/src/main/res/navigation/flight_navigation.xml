@@ -8,7 +8,25 @@
         android:id="@+id/flight_navigation_home"
         android:name="solutions.s4y.effectivem.flight_tickets.screens.home.HomeFragment"
         android:label="@string/title_flight_tickets"
-        tools:layout="@layout/fragment_hotels" />
+        tools:layout="@layout/fragment_hotels" >
+        <action
+            android:id="@+id/action_flight_navigation_home_to_flight_navigation_search_dialog"
+            app:destination="@id/flight_navigation_search_dialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/flight_navigation_search_dialog"
+        android:name="solutions.s4y.effectivem.flight_tickets.screens.home.SearchDialogFragment"
+        android:label="@string/flights_search"
+        tools:layout="@layout/fragment_dialog_search" >
+        <action
+            android:id="@+id/action_flight_navigation_search_dialog_to_flight_navigation_search"
+            app:destination="@id/flight_navigation_search" />
+    </dialog>
+    <fragment
+        android:id="@+id/flight_navigation_search"
+        android:name="solutions.s4y.effectivem.flight_tickets.screens.search.SearchFragment"
+        android:label="@string/flights_search"
+        tools:layout="@layout/fragment_search" />
     <!--fragment
         app:moduleName="feature/hotels"
         android:id="@+id/navigation_hotels"

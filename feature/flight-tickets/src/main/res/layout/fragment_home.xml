@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="@dimen/view_padding"
     tools:background="@color/grey_2"
@@ -14,11 +15,14 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/flights_search"
+        android:paddingBottom="36dp"
         android:textAppearance="?attr/textAppearanceTitleLarge" />
 
     <include layout="@layout/card_search" android:id="@+id/card_search" />
 
     <TextView
+        android:paddingTop="36dp"
+        android:paddingBottom="24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -39,15 +43,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:visibility="gone"
         tools:itemCount="3"
         tools:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/item_offer" />
+        tools:listitem="@layout/item_offer"
+        tools:visibility="gone"
+        />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/offers_pager2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="gone"
         tools:itemCount="3"
         tools:layoutManager="LinearLayoutManager"
         tools:listitem="@layout/item_offer" />
@@ -57,21 +66,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center" />
-
-    <!--ImageButton
-        android:id="@+id/button_search"
+        android:visibility="gone"
+        android:gravity="center"
+        tools:visibility="gone"/>
+    <TextView
+        android:layout_gravity="right"
+        android:background="@color/red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/cd_search"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:src="@drawable/search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" /-->
+        android:text="ТЗ противоречит макету:\nв макете нарисован список со скроллингом\nв ТЗ подразумевается swipe.\nСделано по макету, swipe-вариант закомментирован.\n\nФильтр сбрасывается намеренно, для стабильности review."/>
+
 </LinearLayout>

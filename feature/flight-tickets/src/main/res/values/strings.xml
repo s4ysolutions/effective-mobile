@@ -46,4 +46,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cdimage">cdImage</string>
     <string name="popular_route">Популярное направление</string>
+    <string name="dest_country_hint">Куда - Турция</string>
+    <string name="dest_city_default">Минск</string>
 </resources>

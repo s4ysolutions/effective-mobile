@@ -1,4 +1,6 @@
 import android.annotation.SuppressLint
+import android.content.Context
+import android.graphics.Rect
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +12,11 @@ import androidx.recyclerview.widget.RecyclerView
 import solutions.s4y.effectivem.flight_tickets.R
 import solutions.s4y.effectm.domain.models.ImageValue
 import solutions.s4y.effectm.domain.models.Offer
+import solutions.s4y.effectm.domain.models.formatted
 
-class OffersRecyclerViewAdapter(private var _offers: Array<Offer>) : RecyclerView.Adapter<OffersRecyclerViewAdapter.OfferViewHolder>() {
+
+class OffersRecyclerViewAdapter(private var _offers: Array<Offer>) :
+    RecyclerView.Adapter<OffersRecyclerViewAdapter.OfferViewHolder>() {
 
     var offers: Array<Offer>
         get() = _offers
@@ -53,14 +58,16 @@ class OffersRecyclerViewAdapter(private var _offers: Array<Offer>) : RecyclerVie
         Log.d(TAG, "loadOffer")
         holder.offerImage.visibility = View.VISIBLE
         holder.loading.visibility = View.GONE
+        holder.title.text = offer.title
         holder.town.text = offer.town ?: ""
-        holder.price.text = offer.price.toString()
+        holder.price.text = "от ${offer.price.formatted}"
         loadImageValueToImageView(offer.image, holder.offerImage)
     }
 
-    inner class OfferViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class OfferViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val offerImage: ImageView = view.findViewById(R.id.image)
         val loading: ProgressBar = view.findViewById(R.id.loading)
+        val title: TextView = view.findViewById(R.id.title)
         val town: TextView = view.findViewById(R.id.town)
         val price: TextView = view.findViewById(R.id.price)
     }

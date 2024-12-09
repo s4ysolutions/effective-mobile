@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import solutions.s4y.effectivem.flight_tickets.databinding.FragmentSearchBinding
 import solutions.s4y.effectm.domain.models.TicketOffer
 
+@AndroidEntryPoint
 class SearchFragment : Fragment() {
 
     private val searchViewModel: SearchViewModel by viewModels()
@@ -32,6 +34,14 @@ class SearchFragment : Fragment() {
             clipToPadding = false
             clipChildren = false
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        }
+
+        with(binding.destCity) {
+            isEnabled = false
+        }
+
+        with(binding.destCountry) {
+            isEnabled = false
         }
 
         searchViewModel.offers.observe(viewLifecycleOwner) {
@@ -61,5 +71,6 @@ class SearchFragment : Fragment() {
 
     companion object {
         const val TAG = "SearchFragment"
+
     }
 }

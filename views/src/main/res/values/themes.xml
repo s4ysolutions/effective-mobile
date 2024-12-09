@@ -22,9 +22,9 @@
         <item name="cardViewStyle">@style/Theme.Effectivem.CardViewStyle</item>
         <item name="textAppearanceTitleLarge">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
         <item name="textAppearanceTitleMedium">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
-        <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
+        <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleSmall</item>
         <item name="textAppearanceBody1">@style/Theme.Effectivem.TextAppearance.Test</item>
-        <item name="textAppearanceBody2">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceBody2">@style/Theme.Effectivem.TextAppearance.BodyMedium</item>
         <!-- text edit -->
         <item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.BodyLarge</item>
         <item name="textAppearanceBodyMedium">@style/Theme.Effectivem.TextAppearance.Test</item>
