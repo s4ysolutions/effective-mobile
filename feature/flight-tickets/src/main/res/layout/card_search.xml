@@ -62,7 +62,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="?attr/colorOnSurface" />
+                    android:background="?attr/colorOnSurfaceVariant" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"

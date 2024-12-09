@@ -11,6 +11,9 @@ import solutions.s4y.effectivem.flight_tickets.R
 import solutions.s4y.effectm.domain.models.ImageValue
 import solutions.s4y.effectm.domain.models.Offer
 
+/**
+ * not used see HomeFragment
+ */
 class OffersPagerAdapter(private var _offers: Array<Offer>) : PagerAdapter() {
 
     var offers: Array<Offer>

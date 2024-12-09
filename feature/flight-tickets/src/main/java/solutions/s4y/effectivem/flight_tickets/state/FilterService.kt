@@ -1,7 +1,6 @@
 package solutions.s4y.effectivem.flight_tickets.state
 
 import android.content.Context
-import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -33,7 +32,7 @@ class FilterService @Inject constructor(@ApplicationContext private val context:
     suspend fun setDestCity(value: String) {
         context.dsFilter.edit { settings ->
             if (value != settings[DEST_CITY_KEY]) {
-                settings[DEST_CITY_KEY] = value
+                settings[DEST_CITY_KEY] = value.orEmpty()
             }
         }
     }
@@ -42,7 +41,7 @@ class FilterService @Inject constructor(@ApplicationContext private val context:
     suspend fun setDestCountry(value: String) {
         context.dsFilter.edit { settings ->
             if (value != settings[DEST_COUNTRY_KEY]) {
-                settings[DEST_COUNTRY_KEY] = value
+                settings[DEST_COUNTRY_KEY] = value.orEmpty()
             }
         }
     }

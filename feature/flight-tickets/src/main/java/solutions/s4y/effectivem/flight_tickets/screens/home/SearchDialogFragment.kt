@@ -29,10 +29,6 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
     private val destCityUpdating = AtomicBoolean(false)
     private val destCountryUpdating = AtomicBoolean(false)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         dialog.setOnShowListener { dialogInterface ->
@@ -67,24 +63,39 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
                 val layoutParams = bottomSheet.layoutParams
                 layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
                 bottomSheet.layoutParams = layoutParams
+
+                bottomSheet.findViewById<TextInputEditText>(R.id.dest_city)?.let { destCity ->
+                    destCity.filters = arrayOf(cyrillicFilter)
+                    destCity.addTextChangedListener(cityWatcher)
+                    viewModel.destCityLiveData.observe(viewLifecycleOwner) { text ->
+                        Log.d(TAG, "destCity.observe $text")
+                        if (text != destCity.text.toString()) {
+                            Log.d(TAG, "destCity.observe setText $text")
+                            destCity.setText(text)
+                        }
+                    }
+                }
+
                 bottomSheet.findViewById<TextInputEditText>(R.id.dest_country)?.let { destCountry ->
                     with(destCountry) {
                         filters = arrayOf(cyrillicFilter)
                         addTextChangedListener(countryWatcher)
                     }
                     viewModel.destCountryLiveData.observe(viewLifecycleOwner) { text ->
+                        Log.d(TAG, "destCountry.observe $text")
                         if (text != destCountry.text.toString()) {
+                            Log.d(TAG, "destCountry.observe setText $text")
                             destCountry.setText(text)
                         }
                     }
-                }
-
-                bottomSheet.findViewById<TextInputEditText>(R.id.dest_city)?.let { destCity ->
-                    destCity.filters = arrayOf(cyrillicFilter)
-                    destCity.addTextChangedListener(cityWatcher)
-                    viewModel.destCityLiveData.observe(viewLifecycleOwner) { text ->
-                        if (text != destCity.text.toString()) {
-                            destCity.setText(text)
+                    bottomSheet.findViewById<View>(R.id.clear)?.setOnClickListener {
+                        destCountry.setText("")
+                    }
+                    bottomSheet.findViewById<TextInputEditText>(R.id.dest_city)?.let { destCity ->
+                        bottomSheet.findViewById<View>(R.id.exchange)?.setOnClickListener {
+                            val swap = destCountry.text.toString().orEmpty()
+                            destCountry.setText(destCity.text.toString().orEmpty())
+                            destCity.setText(swap)
                         }
                     }
                 }
@@ -93,15 +104,15 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
 
     private val countryWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            Log.d(TAG, "beforeTextChanged $s")
+            Log.d(TAG, "beforeTextChanged countryWatcher $s")
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            Log.d(TAG, "onTextChanged $s")
+            Log.d(TAG, "onTextChanged countryWatcher $s")
         }
 
         override fun afterTextChanged(s: Editable?) {
-            Log.d(TAG, "afterTextChanged $s")
+            Log.d(TAG, "afterTextChanged countryWatcher $s")
             if (s.isNullOrEmpty()) {
                 return
             }
@@ -110,14 +121,14 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
                 findNavController().navigate(R.id.action_flight_navigation_search_dialog_to_flight_navigation_search)
             }
             if (destCountryUpdating.getAndSet(true)) {
-                Log.d(TAG, "afterTextChanged already updating")
+                Log.d(TAG, "afterTextChanged countryWatcher already updating")
                 return
             }
             lifecycleScope.launch {
-                Log.d(TAG, "afterTextChanged $s")
+                Log.d(TAG, "afterTextChanged countryWatcher $s")
                 viewModel.setDestCountry(s.toString())
             }.invokeOnCompletion {
-                Log.d(TAG, "afterTextChanged invokeOnCompletion")
+                Log.d(TAG, "afterTextChanged countryWatcher invokeOnCompletion")
                 destCountryUpdating.set(false)
             }
         }
@@ -125,24 +136,24 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
 
     private val cityWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            Log.d(TAG, "beforeTextChanged $s")
+            Log.d(TAG, "beforeTextChanged cityWatcher $s")
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            Log.d(TAG, "onTextChanged $s")
+            Log.d(TAG, "onTextChanged cityWatcher $s")
         }
 
         override fun afterTextChanged(s: Editable?) {
-            Log.d(TAG, "afterTextChanged $s")
+            Log.d(TAG, "afterTextChanged cityWatcher $s")
             if (destCityUpdating.getAndSet(true)) {
-                Log.d(TAG, "afterTextChanged already updating")
+                Log.d(TAG, "afterTextChanged cityWatcher already updating")
                 return
             }
             lifecycleScope.launch {
-                Log.d(TAG, "afterTextChanged $s")
+                Log.d(TAG, "afterTextChanged cityWatcher $s")
                 viewModel.setDestCity(s.toString())
             }.invokeOnCompletion {
-                Log.d(TAG, "afterTextChanged invokeOnCompletion")
+                Log.d(TAG, "afterTextChanged cityWatcher invokeOnCompletion")
                 destCityUpdating.set(false)
             }
         }

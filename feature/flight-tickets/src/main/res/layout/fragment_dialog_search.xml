@@ -45,23 +45,19 @@
                 android:baselineAligned="false"
                 android:orientation="horizontal">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
+                <ImageButton
+                    android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
-                    android:paddingEnd="?attr/viewPadding"
-                    tools:ignore="RtlSymmetry">
+                    android:contentDescription="@string/cd_search"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/flight2"
+                    tools:style="?attr/imageButtonStyle" />
 
-                    <ImageButton
-                        android:layout_width="48dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:contentDescription="@string/cd_search"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/flight2"
-                        tools:style="?attr/imageButtonStyle" />
-                </FrameLayout>
-
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -75,12 +71,23 @@
                         android:background="@null"
                         android:text="Минск" />
                 </com.google.android.material.textfield.TextInputLayout>
+                    <ImageButton
+                        android:id="@+id/exchange"
+                        android:layout_width="48dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/cd_search"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="0dp"
+                        android:src="@drawable/up_down"
+                        tools:style="?attr/imageButtonStyle" />
+                </LinearLayout>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="?attr/colorOnSurface" />
+                android:background="?attr/colorOnBackground" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -88,22 +95,16 @@
                 android:baselineAligned="false"
                 android:orientation="horizontal">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
+                <ImageButton
+                    android:paddingTop="8dp"
+                    android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
-                    android:paddingEnd="?attr/viewPadding"
-                    tools:ignore="RtlSymmetry">
-
-                    <ImageButton
-                        android:layout_width="48dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:contentDescription="@string/cd_search"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/search"
-                        tools:style="?attr/imageButtonStyle" />
-                </FrameLayout>
+                    android:contentDescription="@string/cd_search"
+                    app:tint="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/search"
+                    tools:style="?attr/imageButtonStyle" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
@@ -126,13 +127,13 @@
                     tools:ignore="RtlSymmetry">
 
                     <ImageButton
+                        android:id="@+id/clear"
                         android:layout_width="48dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:contentDescription="@string/cd_search"
-                        android:paddingStart="31dp"
+                        android:paddingStart="24dp"
                         android:paddingEnd="0dp"
-                        android:scaleType="centerInside"
                         android:src="@drawable/mult_cross"
                         tools:style="?attr/imageButtonStyle" />
                 </FrameLayout>
@@ -310,7 +311,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/grey_4" />
+                    android:background="?attr/colorOnBackground" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -352,7 +353,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/grey_4" />
+                    android:background="?attr/colorOnBackground" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -394,7 +395,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/grey_4" />
+                    android:background="?attr/colorOnBackground" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

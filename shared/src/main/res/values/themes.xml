@@ -6,6 +6,8 @@
         <item name="colorPrimaryVariant">@color/black</item>
         <!-- text input color -->
         <item name="colorOnSurface">@color/white</item>
+        <!-- dividers color -->
+        <item name="colorOnBackground">@color/grey_4</item>
         <!-- text hint color -->
         <item name="colorOnSurfaceVariant">@color/grey_6</item>
 

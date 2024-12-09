@@ -13,6 +13,9 @@ import solutions.s4y.effectivem.flight_tickets.R
 import solutions.s4y.effectm.domain.models.ImageValue
 import solutions.s4y.effectm.domain.models.Offer
 
+/**
+ * not used see HomeFragment
+ */
 class OffersPager2Adapter(private var _offers: Array<Offer>) :
     RecyclerView.Adapter<OffersPager2Adapter.OfferViewHolder>() {
 
