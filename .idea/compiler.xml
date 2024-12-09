@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="11">
       <module name="effectivem.data-tickets" target="21" />
       <module name="effectivem.flight-tickets" target="21" />
+      <module name="effectivem.navigation" target="21" />
       <module name="effectivem.provider" target="21" />
       <module name="effectivem.tickets-provider" target="21" />
     </bytecodeTargetLevel>

@@ -36,8 +36,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":views"))
-    implementation(project(":feature:profile"))
+    implementation(project(":shared"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!--style name="Theme.Effectivem" parent="Theme.MaterialComponents.DayNight.NoActionBar"-->
+    <style name="Theme.Effectivem" parent="Theme.MaterialComponents">
+        <!-- text input color -->
+        <item name="colorPrimaryVariant">@color/black</item>
+        <!-- text input color -->
+        <item name="colorOnSurface">@color/white</item>
+        <!-- text hint color -->
+        <item name="colorOnSurfaceVariant">@color/grey_6</item>
+
+        <!--item name="android:windowBackground">?attr/colorPrimaryVariant</item-->
+        <item name="viewPadding">@dimen/view_padding</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="cornerRadius">@dimen/view_padding</item>
+
+        <item name="bottomSheetDialogTheme">@style/Theme.Effectivem.BottomSheetDialog</item>
+        <item name="textInputStyle">@style/Theme.Effectivem.TextInputStyle</item>
+        <item name="cardViewStyle">@style/Theme.Effectivem.CardViewStyle</item>
+        <item name="cardViewNestedStyle">@style/Theme.Effectivem.CardViewNestedStyle</item>
+        <item name="imageButtonStyle">@style/Theme.Effectivem.ImageButtonStyle</item>
+        <!-- title 1 -->
+        <item name="textAppearanceTitleLarge">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
+        <!-- title 3 -->
+        <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleSmall</item>
+        <!-- text 2 -->
+        <item name="textAppearanceBody2">@style/Theme.Effectivem.TextAppearance.BodyMedium</item>
+        <!-- button text 1 (for some reason it needs both, probably because of TextInputLayout wrapper)-->
+        <item name="textAppearanceButton">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>
+        <item name="textAppearanceBodySmall">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>
+        <!--item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.LabelMedium</item-->
+<!--
+        <item name="textAppearanceButton">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>
+        <item name="textAppearanceTitleMedium">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
+        <item name="textAppearanceBody1">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceBodySmall">@style/Theme.Effectivem.TextAppearance.BodySmall</item>
+        <item name="textAppearanceDisplayLarge">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceDisplayMedium">@style/Theme.Effectivem.TextAppearance.Test</item>
+        <item name="textAppearanceDisplaySmall">@style/Theme.Effectivem.TextAppearance.Test</item>
+        -->
+    </style>
+</resources>

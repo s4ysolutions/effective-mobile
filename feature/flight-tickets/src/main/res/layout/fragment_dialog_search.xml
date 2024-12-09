@@ -65,6 +65,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
                     android:layout_weight="1">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -108,6 +109,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -164,6 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"
                 android:text="Сложный маршрут" />
         </LinearLayout>
 
@@ -191,6 +194,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"
                 android:text="Куда угодно" />
         </LinearLayout>
 
@@ -218,6 +222,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"
                 android:text="Выходные" />
         </LinearLayout>
 
@@ -246,6 +251,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"
                 android:text="Горячие билеты" />
         </LinearLayout>
     </LinearLayout>
@@ -283,16 +289,20 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:paddingStart="@dimen/view_padding_half"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleSmall"
                             android:text="Стамбул" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/grey_5"
                             android:text="@string/popular_route" />
                     </LinearLayout>
                 </LinearLayout>
@@ -318,6 +328,7 @@
                         android:src="@drawable/sochi" />
 
                     <LinearLayout
+                        android:paddingStart="@dimen/view_padding_half"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -326,11 +337,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleSmall"
                             android:text="Сочи" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/grey_5"
                             android:text="@string/popular_route" />
                     </LinearLayout>
                 </LinearLayout>
@@ -356,6 +370,7 @@
                         android:src="@drawable/phuket" />
 
                     <LinearLayout
+                        android:paddingStart="@dimen/view_padding_half"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -364,11 +379,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleSmall"
                             android:text="Пхукет" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/grey_5"
                             android:text="@string/popular_route" />
                     </LinearLayout>
                 </LinearLayout>

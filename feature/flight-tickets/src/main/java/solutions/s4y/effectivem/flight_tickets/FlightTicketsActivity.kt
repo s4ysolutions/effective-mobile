@@ -1,16 +1,18 @@
 package solutions.s4y.effectivem.flight_tickets
 
+import android.content.ComponentName
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import dagger.hilt.android.AndroidEntryPoint
 import solutions.s4y.effectivem.flight_tickets.databinding.ActivityFlightTicketsBinding
-import solutions.s4y.effectivem.hotels.HotelsActivity
-import solutions.s4y.effectivem.profile.ProfileActivity
+import solutions.s4y.effectivem.views.BaseActivity
 
 @AndroidEntryPoint
-class FlightTicketsActivity : AppCompatActivity() {
+class FlightTicketsActivity : BaseActivity() {
 
     private lateinit var binding: ActivityFlightTicketsBinding
 
@@ -20,35 +22,17 @@ class FlightTicketsActivity : AppCompatActivity() {
         binding = ActivityFlightTicketsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val navView: BottomNavigationView = binding.navView
+        setupBottomNavigationView(navView, solutions.s4y.effectivem.views.R.id.navigation_flight_tickets)
 
-        val tickets =
-            navView.menu.findItem(solutions.s4y.effectivem.views.R.id.navigation_flight_tickets)
-        tickets.setOnMenuItemClickListener(null)
-        val hotels = navView.menu.findItem(solutions.s4y.effectivem.views.R.id.navigation_hotels)
-        hotels.setOnMenuItemClickListener {
-            // launch hotels activity
-            val intent = android.content.Intent(this, HotelsActivity::class.java)
-            startActivity(intent)
-            finish()
-            true
-        }
-        val profile = navView.menu.findItem(solutions.s4y.effectivem.views.R.id.navigation_profile)
-        profile.setOnMenuItemClickListener {
-            // launch profile activity
-            val intent = android.content.Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-            finish()
-            true
-        }
-        navView.selectedItemId = solutions.s4y.effectivem.views.R.id.navigation_flight_tickets
 
+        // val navController = findNavController(R.id.nav_host_fragment_activity_flight_tickets)
+        /*
         // This is required by FragmentContainerView
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_activity_flight_tickets) as NavHostFragment
         val navController = navHostFragment.navController
-        // val navController = findNavController(R.id.nav_host_fragment_activity_flight_tickets)
-        /*
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(

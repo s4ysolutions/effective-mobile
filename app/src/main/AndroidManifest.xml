@@ -13,26 +13,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Effectivem"
         tools:targetApi="31">
-        <activity
+        <!--activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true"
+            /-->
         <activity
             android:name=".flight_tickets.FlightTicketsActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <data android:scheme="effectivem"/>
                 <data android:host="tickets"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".hotels.HotelsActivity"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+
                 <data android:scheme="effectivem"/>
                 <data android:host="hotels"/>
-                <data android:scheme="effectivem"/>
-                <data android:host="profile"/>
             </intent-filter>
         </activity>
     </application>

@@ -8,7 +8,7 @@
         android:id="@+id/flight_navigation_home"
         android:name="solutions.s4y.effectivem.flight_tickets.screens.home.HomeFragment"
         android:label="@string/title_flight_tickets"
-        tools:layout="@layout/fragment_hotels" >
+        tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_flight_navigation_home_to_flight_navigation_search_dialog"
             app:destination="@id/flight_navigation_search_dialog" />
@@ -27,6 +27,9 @@
         android:name="solutions.s4y.effectivem.flight_tickets.screens.search.SearchFragment"
         android:label="@string/flights_search"
         tools:layout="@layout/fragment_search" />
+    <activity
+        android:id="@+id/external_hotels"
+        app:uri="effectivem://hotels" />
     <!--fragment
         app:moduleName="feature/hotels"
         android:id="@+id/navigation_hotels"

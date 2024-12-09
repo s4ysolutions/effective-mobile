@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Effectivem.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Theme.Effectivem.BottomSheet.Modal</item>
+    </style>
+
+    <!--ignores background style name="Theme.Effectivem.BottomSheet.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal"-->
+    <style name="Theme.Effectivem.BottomSheet.Modal" parent="Widget.Design.BottomSheet.Modal">
+        <item name="backgroundTint">@color/grey_2</item>
+        <item name="android:background">@drawable/shape_rounded_dialog</item>
+    </style>
+    <style name="Theme.Effectivem.CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/grey_3</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="contentPadding">?attr/viewPadding</item>
+    </style>
+    <style name="Theme.Effectivem.CardViewNestedStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/grey_4</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="contentPadding">?attr/viewPadding</item>
+    </style>
+    <style name="Theme.Effectivem.ImageButtonStyle" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@color/red</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- like MaterialTimePicker -->
+    <style name="Theme.Effectivem.TextInputStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/Theme.Effectivem.MaterialThemeOverlay</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeColor">@android:color/transparent</item>
+    </style>
+    <style name="Theme.Effectivem.MaterialThemeOverlay" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="editTextStyle">@style/Theme.Effectivem.TextInputEditText.OutlinedBox</item>
+        <item name="android:textColorHint">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="Theme.Effectivem.TextInputEditText.OutlinedBox" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+</resources>

@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.content.res.Resources
 import android.os.Bundle
 import android.text.Editable
-import android.text.InputFilter
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater

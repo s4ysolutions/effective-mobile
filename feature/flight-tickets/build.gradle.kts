@@ -39,12 +39,9 @@ android {
 
 dependencies {
     kapt(libs.hilt.compiler)
-    implementation(project(":views"))
+    implementation(project(":shared"))
     implementation(project(":domain"))
     implementation(project(":data:tickets"))
-    // needed only for navigation, should be replaced with the dynamic links
-    implementation(project(":feature:hotels"))
-    implementation(project(":feature:profile"))
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
