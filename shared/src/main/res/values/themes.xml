@@ -14,15 +14,24 @@
 
         <!-- screen color -->
         <item name="android:windowBackground">@color/black</item>
+        <!-- dividers color -->
+        <item name="colorOnBackground">@color/grey_4</item>
 
         <!-- text appearance -->
         <!-- title 1 -->
         <item name="textAppearanceTitleLarge">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
+        <!-- title 3 -->
+        <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleSmall</item>
+        <!-- text 2 -->
+        <item name="textAppearanceBodyMedium">@style/Theme.Effectivem.TextAppearance.BodyMedium</item>
+
         <!-- edit text -->
         <item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.BodyLarge</item>
         <item name="textInputStyle">@style/Theme.Effectivem.TextInputStyle</item>
         <!-- text hint color -->
         <item name="colorOnSurfaceVariant">@color/grey_6</item>
+        <!-- dark text -->
+        <item name="colorOnContainer">@color/grey_5</item>
         <!-- text input color -->
         <item name="colorOnSurfaceInverse">@color/white</item>
 
@@ -46,6 +55,9 @@
         <!-- transparent image button background -->
         <item name="imageButtonStyle">@style/Theme.Effectivem.ImageButtonStyle</item>
 
+        <!-- bottom sheet dialog -->
+        <item name="colorSurfaceDim">@color/grey_2</item>
+
         <![CDATA[
         <item name="cornerRadius">@dimen/view_padding</item>
 
@@ -56,8 +68,6 @@
         <item name="colorPrimaryVariant">@color/black</item>
         <!-- text color -->
         <item name="colorSurface">@color/grey_3</item>
-        <!-- dividers color -->
-        <!--item name="colorOnBackground">@color/grey_4</item-->
 
 
         <item name="bottomSheetDialogTheme">@style/Theme.Effectivem.BottomSheetDialog</item>
@@ -69,8 +79,6 @@
         <item name="textAppearanceTitleLarge">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
         <!-- title 3 -->
         <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleSmall</item>
-        <!-- text 2 -->
-        <item name="textAppearanceBody2">@style/Theme.Effectivem.TextAppearance.BodyMedium</item>
         <!-- button text 1 (for some reason it needs both, probably because of TextInputLayout wrapper)-->
         <item name="textAppearanceButton">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>
         <item name="textAppearanceBodySmall">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>

@@ -7,7 +7,7 @@
     android:layout_gravity="fill_vertical"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:background="@color/grey_2"
+    tools:background="?attr/colorSurfaceDim"
     tools:context=".screens.home.SearchDialogFragment"
     tools:style="@style/Theme.Effectivem.BottomSheetDialog"
     tools:theme="@style/Theme.Effectivem">
@@ -22,7 +22,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="8dp"
         android:background="@drawable/shape_rounded_8"
-        android:backgroundTint="@color/grey_5" />
+        android:backgroundTint="?attr/colorOnContainer" />
 
     <Space
         android:layout_width="0dp"
@@ -52,7 +52,8 @@
                     android:contentDescription="@string/cd_search"
                     android:scaleType="centerInside"
                     android:src="@drawable/flight2"
-                    tools:style="?attr/imageButtonStyle" />
+                    tools:style="?attr/imageButtonStyle"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -156,8 +157,8 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/route_complex" />
 
-            <!--android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"-->
             <TextView
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -184,8 +185,8 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/route_whenever" />
 
-            <!--android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"-->
             <TextView
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -212,8 +213,8 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/route_weekend" />
 
-            <!--android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"-->
             <TextView
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -241,8 +242,8 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/route_flame" />
 
-            <!--android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"-->
             <TextView
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -295,8 +296,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="@color/grey_5"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnContainer"
                             android:text="@string/popular_route" />
                     </LinearLayout>
                 </LinearLayout>
@@ -337,8 +338,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="@color/grey_5"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnContainer"
                             android:text="@string/popular_route" />
                     </LinearLayout>
                 </LinearLayout>
@@ -379,8 +380,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="@color/grey_5"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnContainer"
                             android:text="@string/popular_route" />
                     </LinearLayout>
                 </LinearLayout>
