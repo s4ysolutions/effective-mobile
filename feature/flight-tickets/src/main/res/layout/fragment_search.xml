@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/view_padding"
-    tools:background="@color/grey_2"
-    tools:context=".screens.home.HomeFragment"
+    tools:context=".screens.search.SearchFragment"
     tools:theme="@style/Theme.Effectivem">
+    <!--tools:background="?attr/colorPrimaryVariant"-->
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -22,23 +22,15 @@
             android:baselineAligned="false"
             android:orientation="horizontal">
 
-            <FrameLayout
-                android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="48dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:paddingEnd="?attr/viewPadding"
-                tools:ignore="RtlSymmetry">
-
-                <ImageButton
-                    android:id="@+id/search"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:contentDescription="@string/cd_search"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/left_arrow"
-                    tools:style="?attr/imageButtonStyle" />
-            </FrameLayout>
+                android:contentDescription="@string/cd_search"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow"
+                tools:style="?attr/imageButtonStyle" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -53,7 +45,8 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/dest_city"
@@ -62,23 +55,17 @@
                             android:background="@null"
                             android:text="Минск" />
                     </com.google.android.material.textfield.TextInputLayout>
-                    <FrameLayout
-                        android:layout_width="wrap_content"
+
+                    <ImageButton
+                        android:id="@+id/exchange"
+                        android:layout_width="48dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        tools:ignore="RtlSymmetry">
-
-                        <ImageButton
-                            android:layout_width="48dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_vertical"
-                            android:contentDescription="@string/cd_search"
-                            android:paddingStart="31dp"
-                            android:paddingEnd="0dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/up_down"
-                            tools:style="?attr/imageButtonStyle" />
-                    </FrameLayout>
+                        android:contentDescription="@string/cd_search"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="0dp"
+                        android:src="@drawable/up_down"
+                        tools:style="?attr/imageButtonStyle" />
                 </LinearLayout>
 
                 <View
@@ -89,129 +76,141 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:hintEnabled="false">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/dest_country"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="@string/dest_country_hint" />
-                </com.google.android.material.textfield.TextInputLayout>
-                    <FrameLayout
-                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="8dp"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dest_country"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/dest_country_hint" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageButton
+                        android:id="@+id/clear"
+                        android:layout_width="48dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        tools:ignore="RtlSymmetry">
-
-                        <ImageButton
-                            android:layout_width="48dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_vertical"
-                            android:contentDescription="@string/cd_search"
-                            android:paddingStart="31dp"
-                            android:paddingEnd="0dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/mult_cross"
-                            tools:style="?attr/imageButtonStyle" />
-                    </FrameLayout>
+                        android:contentDescription="@string/cd_search"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="0dp"
+                        android:src="@drawable/mult_cross"
+                        tools:style="?attr/imageButtonStyle" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/return_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/cd_search"
-                />
+                android:text="@string/cd_search"/>
+                <!--style="@style/Theme.Effectivem.SnackButtonStyle"/-->
+
             <Button
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/cd_search"
-                />
+                android:text="@string/cd_search" />
+
             <Button
                 android:id="@+id/number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/cd_search"
-                />
+                android:text="@string/cd_search" />
+
             <Button
                 android:id="@+id/card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/cd_search"
-                />
+                android:text="@string/cd_search" />
         </LinearLayout>
     </ScrollView>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+        android:layout_weight="1">
+
         <ProgressBar
             android:id="@+id/loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/direct_flights"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/direct_flights"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Показать все"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/direct_flights" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/direct_flights"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_ticket_offer" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Показать все" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Посмотреть все билеты"/>
+        android:text="Посмотреть все билеты" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/bell"/>
+                android:src="@drawable/bell" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Подписка на цену"/>
+                android:text="Подписка на цену" />
+
             <Switch
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

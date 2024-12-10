@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr format="reference" name="cardViewNestedStyle"/>
-    <attr format="reference" name="viewPadding"/>
+    <attr format="dimension" name="viewPadding"/>
+    <attr format="dimension" name="viewPaddingHalf"/>
+    <attr format="dimension" name="cornerRadiusHalf"/>
     <!--attr format="reference" name="textAppearanceTitleLarge"/-->
 </resources>

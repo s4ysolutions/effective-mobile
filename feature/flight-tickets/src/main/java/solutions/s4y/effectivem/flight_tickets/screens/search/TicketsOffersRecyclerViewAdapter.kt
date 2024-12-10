@@ -1,4 +1,6 @@
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -6,13 +8,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import solutions.s4y.effectivem.flight_tickets.R
 import solutions.s4y.effectm.domain.models.ImageValue
 import solutions.s4y.effectm.domain.models.TicketOffer
 import solutions.s4y.effectm.domain.models.formatted
 
-class TicketsOffersRecyclerViewAdapter(private var _offers: Array<TicketOffer>) : RecyclerView.Adapter<TicketsOffersRecyclerViewAdapter.OfferViewHolder>() {
+class TicketsOffersRecyclerViewAdapter(private var _offers: Array<TicketOffer>) :
+    RecyclerView.Adapter<TicketsOffersRecyclerViewAdapter.OfferViewHolder>() {
 
     var offers: Array<TicketOffer>
         get() = _offers
@@ -25,7 +29,8 @@ class TicketsOffersRecyclerViewAdapter(private var _offers: Array<TicketOffer>) 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferViewHolder {
         Log.d(TAG, "onCreateViewHolder")
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ticker_offer, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_ticket_offer, parent, false)
         return OfferViewHolder(view)
     }
 
@@ -53,18 +58,23 @@ class TicketsOffersRecyclerViewAdapter(private var _offers: Array<TicketOffer>) 
         holder.loading.visibility = View.VISIBLE
     }
 
-    private fun loadOffer(position: Int,holder: OfferViewHolder, offer: TicketOffer) {
+    private fun loadOffer(position: Int, holder: OfferViewHolder, offer: TicketOffer) {
         Log.d(TAG, "loadOffer")
         holder.loading.visibility = View.GONE
         holder.marquee.visibility = View.VISIBLE
         holder.airline.visibility = View.VISIBLE
         holder.price.visibility = View.VISIBLE
         holder.dates.visibility = View.VISIBLE
-        holder.marquee.setBackgroundColor(when (position) {
-            1 -> holder.itemView.resources.getColor(solutions.s4y.effectivem.views.R.color.red)
-            2 -> holder.itemView.resources.getColor(solutions.s4y.effectivem.views.R.color.blue)
-            else -> holder.itemView.resources.getColor(solutions.s4y.effectivem.views.R.color.white)
-        })
+        holder.marquee.backgroundTintList = ColorStateList.valueOf(
+            ContextCompat.getColor(
+                holder.itemView.context,
+                when (position) {
+                    0 -> solutions.s4y.effectivem.views.R.color.red
+                    1 -> solutions.s4y.effectivem.views.R.color.blue
+                    else -> solutions.s4y.effectivem.views.R.color.white
+                }
+            )
+        )
         holder.price.text = offer.price.formatted
         holder.dates.text = offer.timeRange.joinToString(separator = " ")
         holder.airline.text = offer.title

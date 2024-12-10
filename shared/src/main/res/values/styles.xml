@@ -1,5 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.Effectivem.TextAppearance.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="Theme.Effectivem.TextAppearance.Label.Medium" parent="Theme.Effectivem.TextAppearance.Caption"/>
+
+    <style name="Theme.Effectivem.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@drawable/bottom_nav_background</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <!-- text appearance -->
+    <style name="Theme.Effectivem.TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/grey_65</item>
+    </style>
+
+    <style name="Theme.Effectivem.TextAppearance.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="Theme.Effectivem.TextAppearance.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
+    </style>
+
+    <style name="Theme.Effectivem.TextAppearance.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
+    </style>
+
+    <!--style name="Theme.Effectivem.TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">6sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style-->
+
+    <!--  Text Input/Edit like MaterialTimePicker -->
+    <style name="Theme.Effectivem.TextInputStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <!-- I have no idea why it crashes without this -->
+        <item name="enforceTextAppearance">false</item>
+        <item name="materialThemeOverlay">@style/Theme.Effectivem.MaterialThemeOverlay</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+    <style name="Theme.Effectivem.MaterialThemeOverlay" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="editTextStyle">@style/Theme.Effectivem.TextInputEditText.OutlinedBox</item>
+    </style>
+    <style name="Theme.Effectivem.TextInputEditText.OutlinedBox" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <!-- by default item name="android:textAppearance">?attr/textAppearanceBodyLarge</item-->
+        <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textColorHint">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <!-- card view -->
+    <style name="Theme.Effectivem.CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <!--by default item name="cardBackgroundColor">?attr/colorSurface</item-->
+        <item name="cardCornerRadius">?attr/cornerRadius</item>
+        <item name="contentPadding">?attr/viewPadding</item>
+    </style>
+    <style name="Theme.Effectivem.CardViewNestedStyle" parent="Theme.Effectivem.CardViewStyle">
+        <item name="cardBackgroundColor">?attr/colorSurfaceVariant</item>
+    </style>
+
+    <!-- image button -->
+    <style name="Theme.Effectivem.ImageButtonStyle" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <![CDATA[
     <style name="Theme.Effectivem.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/Theme.Effectivem.BottomSheet.Modal</item>
     </style>
@@ -9,65 +85,40 @@
         <item name="backgroundTint">@color/grey_2</item>
         <item name="android:background">@drawable/shape_rounded_dialog</item>
     </style>
-    <style name="Theme.Effectivem.CardViewStyle" parent="Widget.MaterialComponents.CardView">
-        <item name="cardBackgroundColor">@color/grey_3</item>
-        <item name="cardCornerRadius">16dp</item>
-        <item name="contentPadding">?attr/viewPadding</item>
-    </style>
-    <style name="Theme.Effectivem.CardViewNestedStyle" parent="Widget.MaterialComponents.CardView">
-        <item name="cardBackgroundColor">@color/grey_4</item>
-        <item name="cardCornerRadius">16dp</item>
-        <item name="contentPadding">?attr/viewPadding</item>
-    </style>
     <style name="Theme.Effectivem.ImageButtonStyle" parent="Widget.AppCompat.ImageButton">
         <item name="android:background">@android:color/transparent</item>
         <item name="background">@color/red</item>
     </style>
-    <style name="Theme.Effectivem.TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
-        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:textColor">@color/white</item>
+    <style name="Theme.Effectivem.SnackButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/shape_rounded_50</item>
+        <!--item name="android:background">?attr/colorSurface</item-->
+        <!--item name="android:background">@color/red</item-->
+        <!--item name="background">@color/red</item-->
+        <!--item name="backgroundTint">@attr/colorSurface</item-->
+        <!--item name="backgroundTint">@color/green</item-->
+        <!--item name="backgroundTint">@color/grey_3</item-->
+        <!--item name="android:textColor">@color/white</item-->
     </style>
-    <style name="Theme.Effectivem.TextAppearance.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
-        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
-        <item name="android:textSize">16dp</item>
-        <item name="android:textColor">@color/white</item>
+    <style name="Theme.Effectivem.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextColor">@color/bottom_nav_color_state</item>
+        <item name="itemIconTint">@color/bottom_nav_color_state</item>
     </style>
     <style name="Theme.Effectivem.TextAppearance.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
-    <style name="Theme.Effectivem.TextAppearance.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
-        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
     <style name="Theme.Effectivem.TextAppearance.BodySmall" parent="TextAppearance.Material3.BodySmall">
         <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
     </style>
+
     <style name="Theme.Effectivem.TextAppearance.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
         <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <!-- like MaterialTimePicker -->
-    <style name="Theme.Effectivem.TextInputStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="materialThemeOverlay">@style/Theme.Effectivem.MaterialThemeOverlay</item>
-        <item name="boxStrokeWidth">0dp</item>
-        <item name="boxStrokeColor">@android:color/transparent</item>
-    </style>
-    <style name="Theme.Effectivem.MaterialThemeOverlay" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-        <item name="editTextStyle">@style/Theme.Effectivem.TextInputEditText.OutlinedBox</item>
-        <item name="android:textColorHint">?attr/colorOnSurfaceVariant</item>
-    </style>
-    <style name="Theme.Effectivem.TextInputEditText.OutlinedBox" parent="Widget.Material3.TextInputEditText.OutlinedBox">
-        <item name="android:textAppearance">?attr/textAppearanceButton</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
-        <item name="android:padding">0dp</item>
-    </style>
-
+]]>
 </resources>

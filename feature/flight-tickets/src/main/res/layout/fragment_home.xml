@@ -70,6 +70,8 @@
         android:gravity="center"
         tools:visibility="gone"/>
     <TextView
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="48dp"
         android:layout_gravity="right"
         android:background="@color/red"
         android:layout_width="wrap_content"

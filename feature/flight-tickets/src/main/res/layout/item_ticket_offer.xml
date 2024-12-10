@@ -5,6 +5,7 @@
     android:orientation="horizontal">
 
     <ProgressBar
+        tools:visibility="gone"
         android:id="@+id/loading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -14,6 +15,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/circle"
+        android:clipToOutline="true"
         android:backgroundTint="@color/red" />
 
     <LinearLayout

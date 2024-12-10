@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "solutions.s4y.effectivem.flight_tickets"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24

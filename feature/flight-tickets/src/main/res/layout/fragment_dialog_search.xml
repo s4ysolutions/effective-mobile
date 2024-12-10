@@ -120,12 +120,6 @@
                         android:hint="@string/dest_country_hint" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    tools:ignore="RtlSymmetry">
-
                     <ImageButton
                         android:id="@+id/clear"
                         android:layout_width="48dp"
@@ -136,7 +130,6 @@
                         android:paddingEnd="0dp"
                         android:src="@drawable/mult_cross"
                         tools:style="?attr/imageButtonStyle" />
-                </FrameLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -163,11 +156,11 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/route_complex" />
 
+            <!--android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"
                 android:text="Сложный маршрут" />
         </LinearLayout>
 
@@ -191,11 +184,11 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/route_whenever" />
 
+            <!--android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"
                 android:text="Куда угодно" />
         </LinearLayout>
 
@@ -219,11 +212,11 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/route_weekend" />
 
+            <!--android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"
                 android:text="Выходные" />
         </LinearLayout>
 
@@ -248,11 +241,11 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/route_flame" />
 
+            <!--android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAppearance="@style/Theme.Effectivem.TextAppearance.BodyMedium"
                 android:text="Горячие билеты" />
         </LinearLayout>
     </LinearLayout>

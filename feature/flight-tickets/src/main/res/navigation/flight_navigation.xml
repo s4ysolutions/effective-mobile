@@ -27,13 +27,4 @@
         android:name="solutions.s4y.effectivem.flight_tickets.screens.search.SearchFragment"
         android:label="@string/flights_search"
         tools:layout="@layout/fragment_search" />
-    <activity
-        android:id="@+id/external_hotels"
-        app:uri="effectivem://hotels" />
-    <!--fragment
-        app:moduleName="feature/hotels"
-        android:id="@+id/navigation_hotels"
-        android:name="solutions.s4y.effectivem.hotels.ui.dashboard.DashboardFragment"
-        android:label="@string/title_hotels"
-        tools:layout="@layout/fragment_home" /-->
 </navigation>

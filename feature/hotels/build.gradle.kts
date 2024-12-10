@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "solutions.s4y.effectivem.hotels"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
