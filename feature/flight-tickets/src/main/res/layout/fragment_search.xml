@@ -183,13 +183,12 @@
                 tools:itemCount="3"
                 tools:listitem="@layout/item_ticket_offer" />
             <TextView
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="48dp"
+                android:layout_marginTop="8dp"
                 android:layout_gravity="right"
                 android:background="@color/red"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Для возврата на первый экран нажать стрелку влево.\nОстальной функционал будет добавлен после подтверждения тех.собеса. Очень страшно потратить время впустую. Горький опыт, извините :)"/>
+                android:text="Для возврата на первый экран нажать стрелку влево.Остальной функционал будет добавлен после подтверждения тех.собеса. Боюсь потратить время впустую. Горький опыт, извините :)"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/github"
