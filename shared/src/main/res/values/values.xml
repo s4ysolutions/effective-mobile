@@ -4,5 +4,14 @@
     <attr format="dimension" name="viewPadding"/>
     <attr format="dimension" name="viewPaddingHalf"/>
     <attr format="dimension" name="cornerRadiusHalf"/>
+    <attr format="reference" name="title_1"/>
+    <attr format="reference" name="title_2"/>
+    <attr format="reference" name="title_3"/>
+    <attr format="reference" name="title_4"/>
+    <attr format="reference" name="text_1"/>
+    <attr format="reference" name="text_2"/>
+    <attr format="reference" name="button_text_1"/>
+    <attr format="reference" name="button_text_2"/>
+    <attr format="reference" name="materialButtonTextStyle"/>
     <!--attr format="reference" name="textAppearanceTitleLarge"/-->
 </resources>

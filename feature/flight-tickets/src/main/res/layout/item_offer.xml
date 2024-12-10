@@ -34,14 +34,14 @@
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:paddingBottom="4dp"
-        android:textAppearance="?attr/textAppearanceTitleSmall"
+        android:textAppearance="?attr/title_3"
         tools:text="Title" />
 
     <TextView
         android:id="@+id/town"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textAppearance="?attr/text_2"
         tools:text="Town" />
 
     <LinearLayout
@@ -54,7 +54,7 @@
             android:src="@drawable/flights" />
         <TextView
             android:id="@+id/price"
-            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textAppearance="?attr/text_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Price" />

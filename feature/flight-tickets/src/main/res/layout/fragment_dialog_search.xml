@@ -105,7 +105,8 @@
                     app:tint="@color/white"
                     android:scaleType="fitCenter"
                     android:src="@drawable/search"
-                    tools:style="?attr/imageButtonStyle" />
+                    tools:style="?attr/imageButtonStyle"
+                    />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
@@ -158,7 +159,7 @@
                 android:src="@drawable/route_complex" />
 
             <TextView
-                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textAppearance="?attr/text_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -186,7 +187,7 @@
                 android:src="@drawable/route_whenever" />
 
             <TextView
-                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textAppearance="?attr/text_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -214,7 +215,7 @@
                 android:src="@drawable/route_weekend" />
 
             <TextView
-                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textAppearance="?attr/text_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -243,7 +244,7 @@
                 android:src="@drawable/route_flame" />
 
             <TextView
-                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textAppearance="?attr/text_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -290,13 +291,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceTitleSmall"
+                            android:textAppearance="?attr/title_3"
                             android:text="Стамбул" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textAppearance="?attr/text_2"
                             android:textColor="?attr/colorOnContainer"
                             android:text="@string/popular_route" />
                     </LinearLayout>
@@ -332,13 +333,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceTitleSmall"
+                            android:textAppearance="?attr/title_3"
                             android:text="Сочи" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textAppearance="?attr/text_2"
                             android:textColor="?attr/colorOnContainer"
                             android:text="@string/popular_route" />
                     </LinearLayout>
@@ -374,13 +375,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceTitleSmall"
+                            android:textAppearance="?attr/title_3"
                             android:text="Пхукет" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textAppearance="?attr/text_2"
                             android:textColor="?attr/colorOnContainer"
                             android:text="@string/popular_route" />
                     </LinearLayout>
@@ -391,8 +392,17 @@
                     android:layout_height="1dp"
                     android:background="?attr/colorOnBackground" />
 
+                <TextView
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="48dp"
+                    android:layout_gravity="right"
+                    android:background="@color/red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Для перехода на экран поиска ввести в поле 'Куда' Турция, Россия, Таиланд или любую строку > 7 символов"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </ScrollView>
+
 
 </LinearLayout>

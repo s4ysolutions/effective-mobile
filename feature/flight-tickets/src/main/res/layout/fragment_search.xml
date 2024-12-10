@@ -106,45 +106,49 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="?attr/viewPadding"
+            android:paddingBottom="?attr/viewPadding"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/return_date"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/cd_search"/>
-                <!--style="@style/Theme.Effectivem.SnackButtonStyle"/-->
+                android:text="обратно"
+                app:icon="@drawable/plus" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/cd_search" />
+                style="?attr/materialButtonOutlinedStyle"
+                android:text="@string/tools_data" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/cd_search" />
+                style="?attr/materialButtonOutlinedStyle"
+                app:icon="@drawable/person"
+                android:text="1,эконом" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/cd_search" />
+                style="?attr/materialButtonOutlinedStyle"
+                app:icon="@drawable/settinggs"
+                android:text="Карта" />
         </LinearLayout>
-    </ScrollView>
+    </HorizontalScrollView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -159,6 +163,7 @@
             android:gravity="center" />
 
         <LinearLayout
+            android:id="@+id/routes_panel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -166,6 +171,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAppearance="?attr/title_2"
+                android:paddingBottom="?attr/viewPaddingHalf"
                 android:text="@string/direct_flights" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -175,26 +182,51 @@
                 android:layout_weight="1"
                 tools:itemCount="3"
                 tools:listitem="@layout/item_ticket_offer" />
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="48dp"
+                android:layout_gravity="right"
+                android:background="@color/red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Для возврата на первый экран нажать стрелку влево.\nОстальной функционал будет добавлен после подтверждения тех.собеса. Очень страшно потратить время впустую. Горький опыт, извините :)"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/github"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Исходный код"
+                app:icon="@drawable/github" />
+
+            <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="?attr/materialButtonTextStyle"
                 android:text="Показать все" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="?attr/viewPadding"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Посмотреть все билеты" />
 
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="?attr/viewPadding"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageView
@@ -206,9 +238,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingStart="?attr/viewPaddingHalf"
+                android:paddingEnd="?attr/viewPaddingHalf"
+                android:textAppearance="?attr/text_1"
                 android:text="Подписка на цену" />
 
-            <Switch
+            <com.google.android.material.switchmaterial.SwitchMaterial
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>

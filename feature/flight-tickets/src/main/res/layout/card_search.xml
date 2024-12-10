@@ -33,6 +33,7 @@
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/cd_search"
                     android:scaleType="centerInside"
+                    tools:style="?attr/imageButtonStyle"
                     android:src="@drawable/search"/>
             </FrameLayout>
 

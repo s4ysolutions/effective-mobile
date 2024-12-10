@@ -75,7 +75,7 @@ class TicketsOffersRecyclerViewAdapter(private var _offers: Array<TicketOffer>) 
                 }
             )
         )
-        holder.price.text = offer.price.formatted
+        holder.price.text = offer.price.formatted + " >"
         holder.dates.text = offer.timeRange.joinToString(separator = " ")
         holder.airline.text = offer.title
     }

@@ -32,7 +32,7 @@ class FilterService @Inject constructor(@ApplicationContext private val context:
     suspend fun setDestCity(value: String) {
         context.dsFilter.edit { settings ->
             if (value != settings[DEST_CITY_KEY]) {
-                settings[DEST_CITY_KEY] = value.orEmpty()
+                settings[DEST_CITY_KEY] = value
             }
         }
     }
@@ -41,7 +41,7 @@ class FilterService @Inject constructor(@ApplicationContext private val context:
     suspend fun setDestCountry(value: String) {
         context.dsFilter.edit { settings ->
             if (value != settings[DEST_COUNTRY_KEY]) {
-                settings[DEST_COUNTRY_KEY] = value.orEmpty()
+                settings[DEST_COUNTRY_KEY] = value
             }
         }
     }

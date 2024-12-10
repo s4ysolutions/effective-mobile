@@ -48,4 +48,5 @@
     <string name="popular_route">Популярное направление</string>
     <string name="dest_country_hint">Куда - Турция</string>
     <string name="dest_city_default">Минск</string>
+    <string name="tools_data">24 фев, <font color="#FF0000">сб</font></string>
 </resources>

@@ -55,7 +55,11 @@ class HomeFragment : Fragment() {
                 binding.offersPager.visibility = View.GONE
                 binding.offersPager2.visibility = View.GONE
                 binding.offers.apply {
-                    addItemDecoration(DividerItemDecoration(resources.getDimension(R.dimen.offers_interval).toInt()));
+                    addItemDecoration(
+                        DividerItemDecoration(
+                            resources.getDimension(R.dimen.offers_interval).toInt()
+                        )
+                    );
                     visibility = View.VISIBLE
                     adapter = offersRecyclerViewAdapter
                     clipToPadding = false
@@ -100,64 +104,10 @@ class HomeFragment : Fragment() {
 
         with(binding.cardSearch.destCity) {
             filters = arrayOf(cyrillicFilter)
-            addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) {
-                    if (destCityUpdating.getAndSet(true)) {
-                        Log.d(TAG, "afterTextChanged already updating")
-                        return
-                    }
-                    lifecycleScope.launch {
-                        Log.d(TAG, "afterTextChanged $s")
-                        viewModel.setDestCity(s.toString())
-                    }.invokeOnCompletion {
-                        Log.d(TAG, "afterTextChanged invokeOnCompletion")
-                        destCityUpdating.set(false)
-                    }
-                }
-
-                override fun beforeTextChanged(
-                    s: CharSequence?,
-                    start: Int,
-                    count: Int,
-                    after: Int
-                ) {
-                }
-
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                }
-
-            })
         }
 
         with(binding.cardSearch.destCountry) {
             filters = arrayOf(cyrillicFilter)
-            addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) {
-                    if (destCountryUpdating.getAndSet(true)) {
-                        Log.d(TAG, "afterTextChanged already updating")
-                        return
-                    }
-                    lifecycleScope.launch {
-                        Log.d(TAG, "afterTextChanged $s")
-                        viewModel.setDestCountry(s.toString())
-                    }.invokeOnCompletion {
-                        Log.d(TAG, "afterTextChanged invokeOnCompletion")
-                        destCountryUpdating.set(false)
-                    }
-                }
-
-                override fun beforeTextChanged(
-                    s: CharSequence?,
-                    start: Int,
-                    count: Int,
-                    after: Int
-                ) {
-                }
-
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                }
-
-            })
             setOnFocusChangeListener { v, hasFocus ->
                 if (hasFocus) {
                     findNavController().navigate(R.id.action_flight_navigation_home_to_flight_navigation_search_dialog)
@@ -173,7 +123,9 @@ class HomeFragment : Fragment() {
                 Log.d(TAG, "destCity.observe $it")
                 isEnabled = true
                 if (text.toString() != it) {
+                    removeTextChangedListener(cityWatcher)
                     setText(it)
+                    addTextChangedListener(cityWatcher)
                 }
             }
         }
@@ -184,7 +136,9 @@ class HomeFragment : Fragment() {
                 // currently redundant, but just to do not forget to enable it
                 isEnabled = true
                 if (text.toString() != it) {
+                    removeTextChangedListener(countryWatcher)
                     setText(it)
+                    addTextChangedListener(countryWatcher)
                 }
             }
         }
@@ -241,6 +195,72 @@ class HomeFragment : Fragment() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        // skip onViewStateRestored
+        with(binding.cardSearch.destCity) {
+            addTextChangedListener(cityWatcher)
+        }
+        with(binding.cardSearch.destCountry) {
+            addTextChangedListener(countryWatcher)
+        }
+    }
+
+    private val cityWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+            if (destCityUpdating.getAndSet(true)) {
+                Log.d(TAG, "afterTextChanged already updating")
+                return
+            }
+            lifecycleScope.launch {
+                Log.d(TAG, "afterTextChanged $s")
+                viewModel.setDestCity(s.toString())
+            }.invokeOnCompletion {
+                Log.d(TAG, "afterTextChanged invokeOnCompletion")
+                destCityUpdating.set(false)
+            }
+        }
+
+        override fun beforeTextChanged(
+            s: CharSequence?,
+            start: Int,
+            count: Int,
+            after: Int
+        ) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        }
+
+    }
+
+    private val countryWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+            if (destCountryUpdating.getAndSet(true)) {
+                Log.d(TAG, "afterTextChanged already updating")
+                return
+            }
+            lifecycleScope.launch {
+                Log.d(TAG, "afterTextChanged $s")
+                viewModel.setDestCountry(s.toString())
+            }.invokeOnCompletion {
+                Log.d(TAG, "afterTextChanged invokeOnCompletion")
+                destCountryUpdating.set(false)
+            }
+        }
+
+        override fun beforeTextChanged(
+            s: CharSequence?,
+            start: Int,
+            count: Int,
+            after: Int
+        ) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        }
+
+    }
 
     companion object {
         private const val TAG = "HomeFragment"

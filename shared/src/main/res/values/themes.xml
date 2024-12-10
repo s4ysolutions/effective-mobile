@@ -1,99 +1,78 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <!--style name="Theme.Effectivem" parent="Theme.MaterialComponents.DayNight.NoActionBar"-->
     <style name="Theme.Effectivem" parent="Theme.MaterialComponents">
-        <!-- ATTRIBUTES -->
-        <item name="viewPadding">16dp</item>
-        <item name="viewPaddingHalf">8dp</item>
-        <item name="cornerRadius">16dp</item>
-        <item name="cornerRadiusHalf">8dp</item>
+        <!-- custom attributes -->
+        <item name="viewPadding">@dimen/view_padding</item>
+        <item name="viewPaddingHalf">@dimen/view_padding_half</item>
+        <item name="cornerRadius">@dimen/view_padding</item>
+        <item name="cornerRadiusHalf">@dimen/view_padding_half</item>
 
         <!-- turn off action bar -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <!-- screen color -->
-        <item name="android:windowBackground">@color/black</item>
+        <!-- override MUI colors -->
+        <item name="colorPrimary">@color/blue</item>
+        <!-- text color -->
+        <item name="colorOnSurfaceInverse">@color/white</item>
+        <!-- bottom sheet dialog -->
+        <item name="colorSurfaceDim">@color/grey_2</item>
+        <!-- card view/outlined button color -->
+        <item name="colorSurface">@color/grey_3</item>
+        <!-- card nested view background color -->
+        <item name="colorSurfaceVariant">@color/grey_4</item>
         <!-- dividers color -->
         <item name="colorOnBackground">@color/grey_4</item>
-
-        <!-- text appearance -->
-        <!-- title 1 -->
-        <item name="textAppearanceTitleLarge">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
-        <!-- title 3 -->
-        <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleSmall</item>
-        <!-- text 2 -->
-        <item name="textAppearanceBodyMedium">@style/Theme.Effectivem.TextAppearance.BodyMedium</item>
-
-        <!-- edit text -->
-        <item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.BodyLarge</item>
-        <item name="textInputStyle">@style/Theme.Effectivem.TextInputStyle</item>
-        <!-- text hint color -->
-        <item name="colorOnSurfaceVariant">@color/grey_6</item>
+        <item name="colorOutline">@color/grey_4</item>
         <!-- dark text -->
         <item name="colorOnContainer">@color/grey_5</item>
-        <!-- text input color -->
-        <item name="colorOnSurfaceInverse">@color/white</item>
-
-
-        <!-- bottom bar -->
-        <!-- checked item color -->
-        <item name="colorPrimary">@color/blue</item>
-        <!-- unchecked item color -->
+        <!-- bottom bar unchecked item color -->
         <item name="colorOnSurface">@color/grey_6</item>
+        <!-- text edit hint color -->
+        <item name="colorOnSurfaceVariant">@color/grey_6</item>
+        <!-- screen color -->
+        <item name="android:windowBackground">@color/black</item>
+
+        <!-- override MUI text appearance -->
+        <item name="textAppearanceTitleLarge">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/Theme.Effectivem.TextAppearance.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleSmall</item>
+        <item name="textAppearanceLabelMedium">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>
+        <item name="textAppearanceBodyMedium">@style/Theme.Effectivem.TextAppearance.BodyMedium</item>
+        <item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.BodyLarge</item>
+
+        <!-- assign design fonts -->
+        <item name="title_1">?attr/textAppearanceTitleLarge</item>
+        <item name="title_2">?attr/textAppearanceTitleMedium</item>
+        <item name="title_3">?attr/textAppearanceTitleSmall</item>
+        <item name="title_4">@style/Theme.Effectivem.TextAppearance.HeadlineMedium</item>
+        <item name="text_1">?attr/textAppearanceLabelMedium</item>
+        <item name="text_2">?attr/textAppearanceBodyMedium</item>
+        <item name="button_text_1">?attr/textAppearanceBodyLarge</item>
+        <item name="button_text_2">?attr/textAppearanceBodyLarge</item>
+
+        <!-- text input style -->
+        <item name="textInputStyle">@style/Theme.Effectivem.TextInputStyle</item>
         <!-- captions appearance -->
         <item name="textAppearanceCaption">@style/Theme.Effectivem.TextAppearance.Caption</item>
         <!-- add top border -->
         <item name="bottomNavigationStyle">@style/Theme.Effectivem.BottomNavigationView</item>
 
         <!-- card view -->
-        <item name="colorSurface">@color/grey_3</item>
+        <!--item name="colorSurface">@color/grey_3</item-->
         <item name="cardViewStyle">@style/Theme.Effectivem.CardViewStyle</item>
-        <item name="colorSurfaceVariant">@color/grey_4</item>
         <item name="cardViewNestedStyle">@style/Theme.Effectivem.CardViewNestedStyle</item>
 
         <!-- transparent image button background -->
         <item name="imageButtonStyle">@style/Theme.Effectivem.ImageButtonStyle</item>
 
-        <!-- bottom sheet dialog -->
-        <item name="colorSurfaceDim">@color/grey_2</item>
-
-        <![CDATA[
-        <item name="cornerRadius">@dimen/view_padding</item>
-
-        <item name="colorOnBackground">@color/green</item>
-        <!-- active bottom bar item color -->
-        <item name="colorPrimary">@color/blue</item>
-        <!-- text input color -->
-        <item name="colorPrimaryVariant">@color/black</item>
-        <!-- text color -->
-        <item name="colorSurface">@color/grey_3</item>
+        <!-- material buttons -->
+        <item name="materialButtonStyle">@style/Theme.Effectivem.MaterialButtonStyle</item>
+        <item name="materialButtonOutlinedStyle">@style/Theme.Effectivem.MaterialButtonOutlineStyle</item>
+        <item name="materialButtonTextStyle">@style/Theme.Effectivem.MaterialButtonTextStyle</item>
 
 
-        <item name="bottomSheetDialogTheme">@style/Theme.Effectivem.BottomSheetDialog</item>
-        <item name="imageButtonStyle">@style/Theme.Effectivem.ImageButtonStyle</item>
-        <item name="bottomNavigationStyle">@style/Theme.Effectivem.BottomNavigationView</item>
-        <item name="buttonStyleSmall">@style/Theme.Effectivem.SnackButtonStyle</item>
-
-        <!-- title 1 -->
-        <item name="textAppearanceTitleLarge">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
-        <!-- title 3 -->
-        <item name="textAppearanceTitleSmall">@style/Theme.Effectivem.TextAppearance.TitleSmall</item>
-        <!-- button text 1 (for some reason it needs both, probably because of TextInputLayout wrapper)-->
-        <item name="textAppearanceButton">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>
-        <item name="textAppearanceBodySmall">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>
-        <!--item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.LabelMedium</item-->
-<!--
-        <item name="textAppearanceButton">@style/Theme.Effectivem.TextAppearance.LabelMedium</item>
-        <item name="textAppearanceTitleMedium">@style/Theme.Effectivem.TextAppearance.TitleLarge</item>
-        <item name="textAppearanceBody1">@style/Theme.Effectivem.TextAppearance.Test</item>
-        <item name="textAppearanceBodyLarge">@style/Theme.Effectivem.TextAppearance.BodyLarge</item>
-        <item name="textAppearanceBodyMedium">@style/Theme.Effectivem.TextAppearance.Test</item>
-        <item name="textAppearanceBodySmall">@style/Theme.Effectivem.TextAppearance.BodySmall</item>
-        <item name="textAppearanceDisplayLarge">@style/Theme.Effectivem.TextAppearance.Test</item>
-        <item name="textAppearanceDisplayMedium">@style/Theme.Effectivem.TextAppearance.Test</item>
-        <item name="textAppearanceDisplaySmall">@style/Theme.Effectivem.TextAppearance.Test</item>
-        -->
-        ]]>
+        <!-- switch style -->
+        <item name="switchStyle">@style/Theme.Effectivem.MaterialSwitch</item>
     </style>
 </resources>
