@@ -150,5 +150,5 @@ defined in the [colors.xml](https://github.com/s4ysolutions/effective-mobile/blo
  - View models are [instantiated](https://github.com/s4ysolutions/effective-mobile/blob/d61adde3936a6dede590bf8865f3435aba230430/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeFragment.kt#L30C1-L30C57) with Hilt
    and receive the [dependencies](https://github.com/s4ysolutions/effective-mobile/blob/d61adde3936a6dede590bf8865f3435aba230430/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeViewModel.kt#L15C1-L18C45)
    as injected constructor parameters, while TicketService is received by [Singleton](https://github.com/s4ysolutions/effective-mobile/blob/d61adde3936a6dede590bf8865f3435aba230430/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeViewModel.kt#L33C3-L34C1).
- - Activities currently have redundant DeepLink definitions in the manifest files: they are left
+ - Activities currently have [redundant DeepLink related](https://github.com/s4ysolutions/effective-mobile/blob/09ceceb67c5ff2718ab3ed4f341b59b616ad9e69/feature/flight-tickets/src/main/AndroidManifest.xml#L17C1-L20C48) intents in the manifest files: they are left
    there for the future use.
