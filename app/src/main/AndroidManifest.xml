@@ -13,38 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Effectivem"
         tools:targetApi="31">
-        <!--activity
-            android:name=".MainActivity"
-            android:exported="true"
-            /-->
-        <activity
-            android:name=".flight_tickets.FlightTicketsActivity"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-            <intent-filter>
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <data android:scheme="effectivem"/>
-                <data android:host="tickets"/>
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".hotels.HotelsActivity"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <data android:scheme="effectivem"/>
-                <data android:host="hotels"/>
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

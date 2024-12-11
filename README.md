@@ -66,7 +66,7 @@ and at least one [fragment](https://github.com/s4ysolutions/effective-mobile/blo
 to implement the UI of the module.
 
 As a consequence of the features modules pattern the [:app](https://github.com/s4ysolutions/effective-mobile/tree/main/app)
-module is very thin and contains only Manifest file.
+module is very thin and contains only Manifest file to [define](https://github.com/s4ysolutions/effective-mobile/blob/d61adde3936a6dede590bf8865f3435aba230430/app/src/main/AndroidManifest.xml#L6C1-L6C39) required by Hilt [custom application class](https://github.com/s4ysolutions/effective-mobile/blob/main/app/src/main/java/solutions/s4y/effectivem/TheApplication.kt).
 
 Also there's a supplementary module [:shared](https://github.com/s4ysolutions/effective-mobile/tree/main/shared) that contains the common resources and utility methods.
 
@@ -147,3 +147,8 @@ defined in the [colors.xml](https://github.com/s4ysolutions/effective-mobile/blo
    are prepared and turned off with kind of [feature flag](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeFragment.kt#L53C1-L53C40).
  - Search screen has a not so-simple ui element with the fancy-formatted date. It's implemented with
    [Spannabe](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/search/SearchFragment.kt#L198C1-L205C14) text object and Calendar API.
+ - View models are [instantiated](https://github.com/s4ysolutions/effective-mobile/blob/d61adde3936a6dede590bf8865f3435aba230430/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeFragment.kt#L30C1-L30C57) with Hilt
+   and receive the [dependencies](https://github.com/s4ysolutions/effective-mobile/blob/d61adde3936a6dede590bf8865f3435aba230430/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeViewModel.kt#L15C1-L18C45)
+   as injected constructor parameters, while TicketService is received by [Singleton](https://github.com/s4ysolutions/effective-mobile/blob/d61adde3936a6dede590bf8865f3435aba230430/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeViewModel.kt#L33C3-L34C1).
+ - Activities currently have redundant DeepLink definitions in the manifest files: they are left
+   there for the future use.

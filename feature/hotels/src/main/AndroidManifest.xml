@@ -6,6 +6,15 @@
             android:name=".HotelsActivity"
             android:exported="true"
             android:label="@string/title_activity_hotels">
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="effectivem" />
+                <data android:host="hotels" />
+            </intent-filter>
         </activity>
     </application>
 

@@ -4,8 +4,18 @@
     <application>
         <activity
             android:name=".ProfileActivity"
-            android:exported="false"
-            android:label="@string/title_activity_profile" />
+            android:exported="true"
+            android:label="@string/title_activity_profile">
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="effectivem" />
+                <data android:host="hotels" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
