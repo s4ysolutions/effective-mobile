@@ -48,12 +48,13 @@
                         android:layout_weight="1"
                         android:paddingBottom="8dp">
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <solutions.s4y.effectivem.flight_tickets.views.PersistedInputEditText
                             android:id="@+id/dest_city"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
-                            android:text="Минск" />
+                            android:text="Минск"
+                            app:persistKey="dest_city"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <ImageButton
@@ -84,11 +85,12 @@
                         android:paddingTop="8dp"
                         app:hintEnabled="false">
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <solutions.s4y.effectivem.flight_tickets.views.PersistedInputEditText
                             android:id="@+id/dest_country"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/dest_country_hint" />
+                            android:hint="@string/dest_country_hint"
+                            app:persistKey="dest_country"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <ImageButton

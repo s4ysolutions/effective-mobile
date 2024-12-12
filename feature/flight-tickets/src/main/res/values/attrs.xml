@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="PersistedInputEditText">
+        <attr name="persistKey" format="enum" >
+            <enum name="dest_city" value="1"/>
+            <enum name="dest_country" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

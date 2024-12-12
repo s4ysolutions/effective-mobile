@@ -4,25 +4,20 @@ import OffersPagerAdapter
 import OffersRecyclerViewAdapter
 import android.graphics.Rect
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import solutions.s4y.effectivem.flight_tickets.R
 import solutions.s4y.effectivem.flight_tickets.databinding.FragmentHomeBinding
-import solutions.s4y.effectivem.flight_tickets.input.cyrillicFilter
+import solutions.s4y.effectivem.flight_tickets.inputfilter.cyrillicFilter
 import solutions.s4y.effectm.domain.models.Offer
-import java.util.concurrent.atomic.AtomicBoolean
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -37,8 +32,6 @@ class HomeFragment : Fragment() {
     private val offersPager2Adapter: OffersPager2Adapter = OffersPager2Adapter(emptyArray())
 
     private lateinit var binding: FragmentHomeBinding
-    private val destCityUpdating = AtomicBoolean(false)
-    private val destCountryUpdating = AtomicBoolean(false)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -118,31 +111,6 @@ class HomeFragment : Fragment() {
             }
         }
 
-        viewModel.destCityLiveData.observe(viewLifecycleOwner) {
-            with(binding.cardSearch.destCity) {
-                Log.d(TAG, "destCity.observe $it")
-                isEnabled = true
-                if (text.toString() != it) {
-                    removeTextChangedListener(cityWatcher)
-                    setText(it)
-                    addTextChangedListener(cityWatcher)
-                }
-            }
-        }
-
-        viewModel.destCountryLiveData.observe(viewLifecycleOwner) {
-            with(binding.cardSearch.destCountry) {
-                Log.d(TAG, "destCountry.observe $it")
-                // currently redundant, but just to do not forget to enable it
-                isEnabled = true
-                if (text.toString() != it) {
-                    removeTextChangedListener(countryWatcher)
-                    setText(it)
-                    addTextChangedListener(countryWatcher)
-                }
-            }
-        }
-
         viewModel.offersLiveData.observe(viewLifecycleOwner) {
             if (it.isEmpty()) {
                 showLoading()
@@ -191,73 +159,6 @@ class HomeFragment : Fragment() {
             state: RecyclerView.State
         ) {
             outRect.right = spacing
-        }
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        // skip onViewStateRestored
-        with(binding.cardSearch.destCity) {
-            addTextChangedListener(cityWatcher)
-        }
-        with(binding.cardSearch.destCountry) {
-            addTextChangedListener(countryWatcher)
-        }
-    }
-
-    private val cityWatcher = object : TextWatcher {
-        override fun afterTextChanged(s: Editable?) {
-            if (destCityUpdating.getAndSet(true)) {
-                Log.d(TAG, "afterTextChanged already updating")
-                return
-            }
-            lifecycleScope.launch {
-                Log.d(TAG, "afterTextChanged $s")
-                viewModel.setDestCity(s.toString())
-            }.invokeOnCompletion {
-                Log.d(TAG, "afterTextChanged invokeOnCompletion")
-                destCityUpdating.set(false)
-            }
-        }
-
-        override fun beforeTextChanged(
-            s: CharSequence?,
-            start: Int,
-            count: Int,
-            after: Int
-        ) {
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        }
-
-    }
-
-    private val countryWatcher = object : TextWatcher {
-        override fun afterTextChanged(s: Editable?) {
-            if (destCountryUpdating.getAndSet(true)) {
-                Log.d(TAG, "afterTextChanged already updating")
-                return
-            }
-            lifecycleScope.launch {
-                Log.d(TAG, "afterTextChanged $s")
-                viewModel.setDestCountry(s.toString())
-            }.invokeOnCompletion {
-                Log.d(TAG, "afterTextChanged invokeOnCompletion")
-                destCountryUpdating.set(false)
-            }
-        }
-
-        override fun beforeTextChanged(
-            s: CharSequence?,
-            start: Int,
-            count: Int,
-            after: Int
-        ) {
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
         }
 
     }

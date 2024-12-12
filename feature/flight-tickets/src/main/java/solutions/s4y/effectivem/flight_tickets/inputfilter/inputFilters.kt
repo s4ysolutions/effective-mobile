@@ -1,4 +1,4 @@
-package solutions.s4y.effectivem.flight_tickets.input
+package solutions.s4y.effectivem.flight_tickets.inputfilter
 
 import android.text.InputFilter
 

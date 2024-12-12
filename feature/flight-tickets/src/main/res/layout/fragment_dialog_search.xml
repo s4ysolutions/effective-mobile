@@ -52,26 +52,28 @@
                     android:contentDescription="@string/cd_search"
                     android:scaleType="centerInside"
                     android:src="@drawable/flight2"
-                    tools:style="?attr/imageButtonStyle"
-                    />
+                    tools:style="?attr/imageButtonStyle" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="8dp"
-                    android:layout_weight="1">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/dest_city"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:text="Минск" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp">
+
+                        <solutions.s4y.effectivem.flight_tickets.views.PersistedInputEditText
+                            android:id="@+id/dest_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:text="Минск"
+                            app:persistKey="dest_city" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <ImageButton
                         android:id="@+id/exchange"
                         android:layout_width="48dp"
@@ -97,16 +99,15 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:paddingTop="8dp"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/cd_search"
-                    app:tint="@color/white"
+                    android:paddingTop="8dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/search"
-                    tools:style="?attr/imageButtonStyle"
-                    />
+                    app:tint="@color/white"
+                    tools:style="?attr/imageButtonStyle" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
@@ -115,23 +116,24 @@
                     android:paddingTop="8dp"
                     app:hintEnabled="false">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <solutions.s4y.effectivem.flight_tickets.views.PersistedInputEditText
                         android:id="@+id/dest_country"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/dest_country_hint" />
+                        android:hint="@string/dest_country_hint"
+                        app:persistKey="dest_country" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                    <ImageButton
-                        android:id="@+id/clear"
-                        android:layout_width="48dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:contentDescription="@string/cd_search"
-                        android:paddingStart="24dp"
-                        android:paddingEnd="0dp"
-                        android:src="@drawable/mult_cross"
-                        tools:style="?attr/imageButtonStyle" />
+                <ImageButton
+                    android:id="@+id/clear"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/cd_search"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="0dp"
+                    android:src="@drawable/mult_cross"
+                    tools:style="?attr/imageButtonStyle" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -159,11 +161,11 @@
                 android:src="@drawable/route_complex" />
 
             <TextView
-                android:textAppearance="?attr/text_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Сложный маршрут" />
+                android:text="Сложный маршрут"
+                android:textAppearance="?attr/text_2" />
         </LinearLayout>
 
         <Space
@@ -187,11 +189,11 @@
                 android:src="@drawable/route_whenever" />
 
             <TextView
-                android:textAppearance="?attr/text_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Куда угодно" />
+                android:text="Куда угодно"
+                android:textAppearance="?attr/text_2" />
         </LinearLayout>
 
         <Space
@@ -215,11 +217,11 @@
                 android:src="@drawable/route_weekend" />
 
             <TextView
-                android:textAppearance="?attr/text_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Выходные" />
+                android:text="Выходные"
+                android:textAppearance="?attr/text_2" />
         </LinearLayout>
 
         <Space
@@ -244,11 +246,11 @@
                 android:src="@drawable/route_flame" />
 
             <TextView
-                android:textAppearance="?attr/text_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Горячие билеты" />
+                android:text="Горячие билеты"
+                android:textAppearance="?attr/text_2" />
         </LinearLayout>
     </LinearLayout>
 
@@ -285,21 +287,21 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:paddingStart="@dimen/view_padding_half"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/view_padding_half">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/title_3"
-                            android:text="Стамбул" />
+                            android:text="Стамбул"
+                            android:textAppearance="?attr/title_3" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="@string/popular_route"
                             android:textAppearance="?attr/text_2"
-                            android:textColor="?attr/colorOnContainer"
-                            android:text="@string/popular_route" />
+                            android:textColor="?attr/colorOnContainer" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -324,24 +326,24 @@
                         android:src="@drawable/sochi" />
 
                     <LinearLayout
-                        android:paddingStart="@dimen/view_padding_half"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/view_padding_half">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/title_3"
-                            android:text="Сочи" />
+                            android:text="Сочи"
+                            android:textAppearance="?attr/title_3" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="@string/popular_route"
                             android:textAppearance="?attr/text_2"
-                            android:textColor="?attr/colorOnContainer"
-                            android:text="@string/popular_route" />
+                            android:textColor="?attr/colorOnContainer" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -366,24 +368,24 @@
                         android:src="@drawable/phuket" />
 
                     <LinearLayout
-                        android:paddingStart="@dimen/view_padding_half"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/view_padding_half">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?attr/title_3"
-                            android:text="Пхукет" />
+                            android:text="Пхукет"
+                            android:textAppearance="?attr/title_3" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="@string/popular_route"
                             android:textAppearance="?attr/text_2"
-                            android:textColor="?attr/colorOnContainer"
-                            android:text="@string/popular_route" />
+                            android:textColor="?attr/colorOnContainer" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -393,13 +395,13 @@
                     android:background="?attr/colorOnBackground" />
 
                 <TextView
-                    android:layout_marginTop="16dp"
-                    android:layout_marginLeft="48dp"
-                    android:layout_gravity="right"
-                    android:background="@color/red"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Для перехода на экран поиска ввести в поле 'Куда' Турция, Россия, Таиланд или любую строку > 7 символов"/>
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/red"
+                    android:text="Для перехода на экран поиска ввести в поле 'Куда' Турция, Россия, Таиланд или любую строку > 7 символов" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </ScrollView>

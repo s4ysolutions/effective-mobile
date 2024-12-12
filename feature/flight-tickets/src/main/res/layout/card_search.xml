@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Theme.Effectivem.CardViewStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/Theme.Effectivem.CardViewStyle"
     tools:context=".screens.home.SearchDialogFragment"
     tools:theme="@style/Theme.Effectivem">
 
@@ -33,8 +33,8 @@
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/cd_search"
                     android:scaleType="centerInside"
-                    tools:style="?attr/imageButtonStyle"
-                    android:src="@drawable/search"/>
+                    android:src="@drawable/search"
+                    tools:style="?attr/imageButtonStyle" />
             </FrameLayout>
 
             <LinearLayout
@@ -48,17 +48,18 @@
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <solutions.s4y.effectivem.flight_tickets.views.PersistedInputEditText
                         android:id="@+id/dest_city"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:persistKey="dest_city"
                         tools:text="@string/dest_city_default" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="?attr/colorOnSurface"/>
+                    android:background="?attr/colorOnSurface" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -66,12 +67,12 @@
                     android:paddingTop="8dp"
                     app:hintEnabled="false">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <solutions.s4y.effectivem.flight_tickets.views.PersistedInputEditText
                         android:id="@+id/dest_country"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/dest_country_hint"
-                        />
+                        app:persistKey="dest_country" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </LinearLayout>
