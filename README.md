@@ -81,7 +81,7 @@ feature and it's nothing but a couple of fragment destination with the actions a
 The inter-module navigation is a bit more complex and depends both on deep links and bottom navigation
 bar as UI element.
 
-Since all the features share the same bottom navigation bar the need to depend on :shared module
+Since all the features share the same bottom navigation bar they need to depend on :shared module
 with the [menu definition](https://github.com/s4ysolutions/effective-mobile/blob/main/shared/src/main/res/menu/bottom_nav_menu.xml)
 and BaseActivity class to have a [method](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/shared/src/main/java/solutions/s4y/effectivem/views/BaseActivity.kt#L10C1-L10C94)
 to setup the navigation bar state.
@@ -107,7 +107,7 @@ defined in the [colors.xml](https://github.com/s4ysolutions/effective-mobile/blo
    to [read the json files from the assets](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/data/tickets/src/main/java/solutions/s4y/effectm/provider/RestClient.kt#L42C1-L55C45)
     folder and uses [Gson](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/data/tickets/src/main/java/solutions/s4y/effectm/provider/RestClient.kt#L70C25-L70C76)
     and [RxJava](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/data/tickets/src/main/java/solutions/s4y/effectm/provider/RestClient.kt#L70C25-L70C76)
-   libraries to parse the json files and expose the endpoints as Singles. The also add
+   libraries to parse the json files and expose the endpoints as Singles. They also add
    some delays to [simulate the network latency](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/data/tickets/src/main/java/solutions/s4y/effectm/provider/RetrofitProvider.kt#L21C11-L21C67).
  - Besides ModelId the domain layer introduces the [ImageValue](https://github.com/s4ysolutions/effective-mobile/blob/main/domain/src/main/java/solutions/s4y/effectm/domain/models/ImageValue.kt) model (ADT) to abstract the source of the
     image and the image itself (current implementation assumes the image is defined by the ID, but 
@@ -131,8 +131,7 @@ defined in the [colors.xml](https://github.com/s4ysolutions/effective-mobile/blo
    to it through FilterService layer with Flow API interface.
  - ViewModels designed for each fragment [inject the TicketsService and FilterService](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeViewModel.kt#L15C1-L19C4)
    with Hilt and
-   [wrap](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeViewModel.kt#L22C1-L25C6)
- - services' Flow API with LiveData to be consumed by the UI. This approach assumes that UI
+   [wrap](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeViewModel.kt#L22C1-L25C6) services' Flow API with LiveData to be consumed by the UI. This approach assumes that UI
    developers don’t get their hands dirty with non-Android-specific libraries.
  - City and country destinations fields require to be updated by the dataStore changes and store
    the values back there. The [implementation is straightforward](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/feature/flight-tickets/src/main/java/solutions/s4y/effectivem/flight_tickets/screens/home/HomeFragment.kt#L121C1-L144C10) with liveData observers and [text
