@@ -4,8 +4,7 @@
 
 [Data layer](https://github.com/s4ysolutions/effective-mobile/tree/main/data/tickets) is Android
 library module that implements [TicketsProvider interface](https://github.com/s4ysolutions/effective-mobile/blob/main/domain/src/main/java/solutions/s4y/effectm/domain/dependencies/TicketsProvider.kt) consumed
-by domain layer with the [Retrofit](class RetrofitProvider @Inject constructor(@ApplicationContext context: Context) : TicketsProvider {
-) client emulating
+by domain layer with the [Retrofit](https://github.com/s4ysolutions/effective-mobile/blob/f09106e58f81be4944b095e1f24600196883cfff/data/tickets/src/main/java/solutions/s4y/effectm/provider/RetrofitProvider.kt#L13C1-L13C101) client emulating
 the [http requests](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/data/tickets/src/main/java/solutions/s4y/effectm/provider/RestClient.kt#L16C1-L24C54)
 by [reading the json](https://github.com/s4ysolutions/effective-mobile/blob/5ed6d48459ce884692fb5c4251f8c2af8c4ba904/data/tickets/src/main/java/solutions/s4y/effectm/provider/RestClient.kt#L40C1-L55C45) files from the assets folder.
 
