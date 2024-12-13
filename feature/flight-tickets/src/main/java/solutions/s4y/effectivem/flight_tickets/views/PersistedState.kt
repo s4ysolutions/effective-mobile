@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.CoroutineScope
@@ -12,20 +13,25 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
-import kotlin.properties.ReadOnlyProperty
-import kotlin.properties.ReadWriteProperty
-import kotlin.reflect.KProperty
+import java.util.Date
 
 sealed class PersistedState<T>(val key: Preferences.Key<T>, val defval: T) {
     // TODO: IRL it is enough to have string key name
     //       but this is a demo of ADT usage
-    object CityDestination : PersistedState<String>(
+    object CityDeparture : PersistedState<String>(
         stringPreferencesKey("dest_city"), ""
     )
 
-    object CountryDestination : PersistedState<String>(
+    object CityDestination : PersistedState<String>(
         stringPreferencesKey("dest_country"), ""
+    )
+
+    object DepartureDate : PersistedState<Long>(
+        longPreferencesKey("departure_date"), Date().time
+    )
+
+    object ReturnDate : PersistedState<Long>(
+        longPreferencesKey("return_date"), -1
     )
 
     fun asStateFlow(context: Context, coroutineScope: CoroutineScope): StateFlow<T> =
@@ -45,12 +51,19 @@ sealed class PersistedState<T>(val key: Preferences.Key<T>, val defval: T) {
         }
     }
 
+    suspend fun unset(context: Context) {
+        context.ticketsDataSource.edit { settings ->
+            settings.remove(key)
+        }
+    }
+
     companion object {
         private val Context.ticketsDataSource: DataStore<Preferences> by preferencesDataStore(name = "tickets")
     }
 }
-
-// allow by syntax for property delegation
+/*
+// TODO: ?
+    allow `by` syntax for property delegation
 class PersistedStateFlowDelegate<T>(
     private val state: PersistedState<T>,
     private val context: Context,
@@ -70,13 +83,14 @@ class PersistedStateFlowDelegate<T>(
     }
 }
 
-
 fun <T> PersistedState<T>.asStateFlow(
     context: Context,
     coroutineScope: CoroutineScope
 ): ReadOnlyProperty<Any?, StateFlow<T>> {
     return PersistedStateFlowDelegate(this, context, coroutineScope)
 }
+*/
+
 /* TODO?
 mutableStateFlow variant: I do not like it, because of 2 reasons:
  - overcomplicated

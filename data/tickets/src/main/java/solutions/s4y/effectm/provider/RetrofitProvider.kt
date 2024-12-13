@@ -11,24 +11,24 @@ import solutions.s4y.effectm.domain.models.TicketOffer
 import javax.inject.Inject
 
 class RetrofitProvider @Inject constructor(@ApplicationContext context: Context) : TicketsProvider {
-    private val restClient = RestClient.getInstance(context)
+    private val retrofitClient = RetrofitClient.getInstance(context)
 
     override fun queryOffers(): Single<Array<Offer>> =
-        restClient.getOffers().subscribeOn(Schedulers.io()).map { jsonOffers ->
+        retrofitClient.getOffers().subscribeOn(Schedulers.io()).map { jsonOffers ->
             Array(jsonOffers.offers.size) { index ->
                 jsonOffers.offers[index].model
             }
         }.delay(DELAY, java.util.concurrent.TimeUnit.MILLISECONDS)
 
     override fun queryTickets(): Single<Array<Ticket>> =
-        restClient.getTickets().subscribeOn(Schedulers.io()).map { jsonTickets ->
+        retrofitClient.getTickets().subscribeOn(Schedulers.io()).map { jsonTickets ->
             Array(jsonTickets.tickets.size) { index ->
                 jsonTickets.tickets[index].model
             }
         }.delay(DELAY, java.util.concurrent.TimeUnit.MILLISECONDS)
 
     override fun queryTicketsOffers(): Single<Array<TicketOffer>> =
-        restClient.getTicketsOffers().subscribeOn(Schedulers.io()).map { jsonTicketsOffers ->
+        retrofitClient.getTicketsOffers().subscribeOn(Schedulers.io()).map { jsonTicketsOffers ->
             Array(jsonTicketsOffers.ticketsOffers.size) { index ->
                 jsonTicketsOffers.ticketsOffers[index].model
             }

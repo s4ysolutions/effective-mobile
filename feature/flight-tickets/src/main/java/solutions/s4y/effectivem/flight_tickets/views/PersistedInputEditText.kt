@@ -69,8 +69,8 @@ class PersistedInputEditText @JvmOverloads constructor(
                 persistedState = when (persistKey) {
                     // TODO: IRL it is enough to have string key name
                     //       but this is a demo of ADT usage
-                    1 -> PersistedState.CityDestination
-                    2 -> PersistedState.CountryDestination
+                    1 -> PersistedState.CityDeparture
+                    2 -> PersistedState.CityDestination
                     else -> throw IllegalArgumentException("Unknown persist key $persistKey")
                 }
                 // Example: Observe the persisted state in the activity's lifecycle

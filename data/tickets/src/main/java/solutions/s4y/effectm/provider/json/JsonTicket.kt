@@ -4,6 +4,12 @@ import com.google.gson.annotations.SerializedName
 import solutions.s4y.effectm.domain.models.Money
 import solutions.s4y.effectm.domain.models.Ticket
 import solutions.s4y.effectm.provider.RemoteEntityId
+import java.time.Instant
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Date
 
 class JsonTicket(
     private val id: Int = 0,
@@ -52,7 +58,7 @@ class JsonDeparture(
     val model
         get() = Ticket.Departure(
             town = town ?: "",
-            date = date ?: "",
+            date = toDate(date),
             airport = airport ?: "UNK"
         )
 }
@@ -65,7 +71,7 @@ class JsonArrival(
     val model
         get() = Ticket.Arrival(
             town = town ?: "",
-            date = date ?: "",
+            date = toDate(date),
             airport = airport ?: "UNK"
         )
 }
@@ -82,4 +88,14 @@ class JsonHandLuggage(
     val size: String?,
 ) {
     val model get() = Ticket.HandLuggage(hasHandLuggage = has_hand_luggage, size = size ?: "")
+}
+
+private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+fun toDate(date: String?): Date {
+    return if (date == null) {
+        Date(0)
+    } else {
+        val localDateTime = LocalDateTime.parse(date, formatter)
+        Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant())
+    }
 }

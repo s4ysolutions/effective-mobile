@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="@dimen/view_padding"
-    tools:background="@color/grey_2"
+    android:padding="?attr/viewPadding"
+    tools:background="?attr/android:windowBackground"
     tools:context=".screens.home.HomeFragment"
     tools:theme="@style/Theme.Effectivem">
 

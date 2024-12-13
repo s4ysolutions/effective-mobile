@@ -1,6 +1,4 @@
 import android.annotation.SuppressLint
-import android.content.Context
-import android.graphics.Rect
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -69,7 +67,7 @@ class OffersRecyclerViewAdapter(private var _offers: Array<Offer>) :
         val loading: ProgressBar = view.findViewById(R.id.loading)
         val title: TextView = view.findViewById(R.id.title)
         val town: TextView = view.findViewById(R.id.town)
-        val price: TextView = view.findViewById(R.id.price)
+        val price: TextView = view.findViewById(R.id.badge)
     }
 
     companion object {

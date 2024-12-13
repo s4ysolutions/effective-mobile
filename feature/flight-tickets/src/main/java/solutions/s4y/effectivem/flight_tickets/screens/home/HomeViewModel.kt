@@ -26,8 +26,10 @@ class HomeViewModel @Inject constructor(
 class SingletonClassForCleanup @Inject constructor(@ApplicationContext context: Context) {
     init {
         runBlocking() {
-            PersistedState.CityDestination.set(context, "Минск")
-            PersistedState.CountryDestination.set(context, "")
+            PersistedState.CityDeparture.set(context, "Минск")
+            PersistedState.CityDestination.set(context, "")
+            PersistedState.DepartureDate.unset(context)
+            PersistedState.ReturnDate.unset(context)
         }
     }
 }

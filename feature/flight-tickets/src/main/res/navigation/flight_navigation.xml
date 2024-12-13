@@ -26,5 +26,14 @@
         android:id="@+id/flight_navigation_search"
         android:name="solutions.s4y.effectivem.flight_tickets.screens.search.SearchFragment"
         android:label="@string/flights_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_flight_navigation_search_to_all_tickets"
+            app:destination="@id/flight_navigation_all_tickets" />
+    </fragment>
+    <fragment
+        android:id="@+id/flight_navigation_all_tickets"
+        android:name="solutions.s4y.effectivem.flight_tickets.screens.tickets.AllTicketsFragment"
+        android:label="@string/show_all_tickets"
+        tools:layout="@layout/fragment_all_tickets" />
 </navigation>

@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="fill_vertical"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:background="?attr/colorSurfaceDim"
+    android:padding="?attr/viewPadding"
+    tools:background="?attr/android:windowBackground"
     tools:context=".screens.home.SearchDialogFragment"
     tools:style="@style/Theme.Effectivem.BottomSheetDialog"
     tools:theme="@style/Theme.Effectivem">
@@ -401,7 +401,7 @@
                     android:layout_marginLeft="48dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/red"
-                    android:text="Для перехода на экран поиска ввести в поле 'Куда' Турция, Россия, Таиланд или любую строку > 7 символов" />
+                    android:text="Для перехода на экран поиска ввести в поле 'Куда' Стамбул, Сочи, Пхукет или любую строку > 7 символов" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </ScrollView>

@@ -1,13 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.tickets.AllTicketsFragment">
+    android:orientation="vertical"
+    android:padding="?attr/viewPadding"
+    tools:context=".screens.tickets.AllTicketsFragment"
+    tools:background="?attr/android:windowBackground"
+    tools:theme="@style/Theme.Effectivem">
 
-    <TextView
+    <LinearLayout
+        android:paddingVertical="?attr/viewPadding"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:paddingStart="4dp"
+            android:paddingEnd="8dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/cd_search"
+            android:scaleType="centerInside"
+            android:src="@drawable/left_arrow"
+            app:tint="?attr/colorPrimary"
+            tools:style="?attr/imageButtonStyle" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Москва-Сочи"
+                android:textAppearance="?attr/title_3" />
+            <TextView
+                android:id="@+id/filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="23 февраля, 1 пассажир"
+                android:textColor="?attr/colorOnSurface"
+                android:textAppearance="?attr/text_2" />
+        </LinearLayout>
+    </LinearLayout>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="?attr/viewPadding"/>
 
-</FrameLayout>
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:gravity="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tickets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_ticket" />
+
+</LinearLayout>

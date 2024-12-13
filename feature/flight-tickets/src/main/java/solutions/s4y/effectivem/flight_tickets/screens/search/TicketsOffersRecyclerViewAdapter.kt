@@ -1,6 +1,5 @@
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -83,7 +82,7 @@ class TicketsOffersRecyclerViewAdapter(private var _offers: Array<TicketOffer>) 
     inner class OfferViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val marquee: View = view.findViewById(R.id.marquee)
         val airline: TextView = view.findViewById(R.id.airline)
-        val price: TextView = view.findViewById(R.id.price)
+        val price: TextView = view.findViewById(R.id.badge)
         val dates: TextView = view.findViewById(R.id.dates)
         val loading: ProgressBar = view.findViewById(R.id.loading)
     }

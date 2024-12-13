@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".screens.home.SearchDialogFragment"
+    tools:background="?attr/android:windowBackground"
     tools:theme="@style/Theme.Effectivem">
 
     <androidx.cardview.widget.CardView

@@ -47,14 +47,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Уральские авиалинии"
+                    tools:text="Уральские авиалинии"
                     android:textAppearance="?attr/title_4" />
 
                 <TextView
-                    android:id="@+id/price"
+                    android:id="@+id/badge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2 390 ₽ >"
+                    tools:text="2 390 ₽ >"
                     android:textAppearance="?attr/title_4"
                     android:textColor="?attr/colorPrimary" />
             </LinearLayout>
@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="07:00  09:10   10:00  11:00  12:00  13:00 "
+                    tools:text="07:00  09:10   10:00  11:00  12:00  13:00 "
                     android:textAppearance="?attr/text_2" />
             </HorizontalScrollView>
         </LinearLayout>

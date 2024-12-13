@@ -61,7 +61,7 @@ class OffersPager2Adapter(private var _offers: Array<Offer>) :
         val offerImage: ImageView = view.findViewById(R.id.image)
         val loading: ProgressBar = view.findViewById(R.id.loading)
         val town: TextView = view.findViewById(R.id.town)
-        val price: TextView = view.findViewById(R.id.price)
+        val price: TextView = view.findViewById(R.id.badge)
     }
 
     companion object {

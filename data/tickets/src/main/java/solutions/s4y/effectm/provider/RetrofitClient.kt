@@ -13,7 +13,7 @@ import solutions.s4y.effectm.provider.json.JsonOffers
 import solutions.s4y.effectm.provider.json.JsonTickets
 import solutions.s4y.effectm.provider.json.JsonTicketsOffers
 
-interface RestClient {
+interface RetrofitClient {
     @GET("/offers.json")
     fun getOffers(): Single<JsonOffers>
 
@@ -25,9 +25,9 @@ interface RestClient {
 
     companion object {
         private const val ASSET_URL_PREFIX = "http://android_asset/"
-        private val TAG = RestClient::class.java.simpleName
+        private val TAG = RetrofitClient::class.java.simpleName
 
-        fun getInstance(context: Context): RestClient {
+        fun getInstance(context: Context): RetrofitClient {
             return (OkHttpClient.Builder()
                 .addInterceptor(
                     object : Interceptor {
@@ -71,7 +71,7 @@ interface RestClient {
                         .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                         .client(httpClientBuilder.build())
                         .build()
-                }.create(RestClient::class.java)
+                }.create(RetrofitClient::class.java)
         }
     }
 }

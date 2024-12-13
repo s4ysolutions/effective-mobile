@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/view_padding"
+    android:padding="?attr/viewPadding"
     tools:context=".screens.search.SearchFragment"
+    tools:background="?attr/android:windowBackground"
     tools:theme="@style/Theme.Effectivem">
-    <!--tools:background="?attr/colorPrimaryVariant"-->
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -184,7 +184,7 @@
                 android:layout_weight="1"
                 tools:itemCount="3"
                 tools:listitem="@layout/item_ticket_offer" />
-            <TextView
+            <!--TextView
                 android:layout_marginTop="8dp"
                 android:layout_gravity="right"
                 android:background="@color/red"
@@ -199,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Исходный код"
-                app:icon="@drawable/github" />
+                app:icon="@drawable/github" /-->
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -213,6 +213,7 @@
         android:layout_height="?attr/viewPadding"/>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/all_tickets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Посмотреть все билеты" />

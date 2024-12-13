@@ -53,7 +53,7 @@
             android:layout_height="24dp"
             android:src="@drawable/flights" />
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/badge"
             android:textAppearance="?attr/text_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

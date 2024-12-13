@@ -113,7 +113,7 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
                 return
             }
             val country = s.toString().lowercase()
-            if (country.length > 7 || country == "турция" || country == "россия" || country == "таиланд") {
+            if (country.length > 7 || country == "стамбул" || country == "сочи" || country == "пхукет") {
                 findNavController().navigate(R.id.action_flight_navigation_search_dialog_to_flight_navigation_search)
             }
         }
